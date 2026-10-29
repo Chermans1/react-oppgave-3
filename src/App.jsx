@@ -1,21 +1,49 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
+import {
+  HashRouter,
+  Link,
+  NavLink,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { TodoProvider } from "./context/TodoProvider.jsx";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import { ThemeContext } from "./context/ThemeContext.js";
-import AddTodo from "./components/AddTodo.jsx";
-import TodoList from "./components/TodoList.jsx";
-import Progress from "./components/Progress.jsx";
 import ThemeSwitcher from "./components/ThemeSwitcher.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Courses from "./pages/Courses.jsx";
+import CourseDetails from "./pages/CourseDetails.jsx";
+import Modules from "./pages/Modules.jsx";
+import Lesson from "./pages/Lesson.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import "./App.css";
 
-function LearningGoals() {
+function Platform() {
   const { theme } = useContext(ThemeContext);
+  const { pathname } = useLocation();
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    mainRef.current?.focus();
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="app" data-theme={theme}>
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={(event) => {
+          event.preventDefault();
+          mainRef.current?.focus();
+        }}
+      >
+        Hopp til innhold
+      </a>
       <header className="site-header">
         <div className="header-inner">
-          <div className="brand">
+          <Link className="brand" to="/" aria-label="EduPlan dashboard">
             <span className="brand-icon" aria-hidden="true">
               <svg
                 viewBox="0 0 24 24"
@@ -29,70 +57,50 @@ function LearningGoals() {
             <span className="brand-name">
               EduPlan<span className="brand-dot">.</span>
             </span>
-          </div>
+          </Link>
+          <nav className="main-nav" aria-label="Hovednavigasjon">
+            <NavLink to="/" end>Dashboard</NavLink>
+            <NavLink to="/kurs">Kursoversikt</NavLink>
+          </nav>
           <ThemeSwitcher />
         </div>
       </header>
 
-      <main className="main-content">
-        <section className="intro" aria-labelledby="page-title">
-          <span className="eyebrow">SMÅ STEG. NY KUNNSKAP.</span>
-          <h1 id="page-title">Din oversikt over læringsmål</h1>
-          <p>
-            Gi læringen retning. Sett deg et mål, ta ett steg av gangen og se
-            fremgangen din.
-          </p>
-        </section>
-
-        <div className="dashboard">
-          <section className="goals-panel" aria-labelledby="goals-title">
-            <div className="panel-heading">
-              <div>
-                <span className="eyebrow">DITT NESTE STEG</span>
-                <h2 id="goals-title">Mine læringsmål</h2>
-              </div>
-              <span className="section-icon" aria-hidden="true">
-                ↗
-              </span>
-            </div>
-            <AddTodo />
-            <TodoList />
-          </section>
-          <aside className="sidebar" aria-label="Progresjon og motivasjon">
-            <Progress />
-            <div className="encouragement">
-              <span className="sparkle" aria-hidden="true">
-                ✧
-              </span>
-              <h2>Litt hver dag teller.</h2>
-              <p>
-                Store fremskritt starter med små mål. Hva vil du lære i dag?
-              </p>
-              <span className="note-line" aria-hidden="true" />
-            </div>
-          </aside>
-        </div>
-        <p className="session-note">
-          Målene dine lagres i denne økten. Ved oppdatering av siden starter du
-          på nytt.
-        </p>
+      <main
+        id="main-content"
+        className="main-content"
+        ref={mainRef}
+        tabIndex={-1}
+      >
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/kurs" element={<Courses />} />
+          <Route path="/kurs/:courseId" element={<CourseDetails />} />
+          <Route path="/kurs/:courseId/moduler" element={<Modules />} />
+          <Route path="/kurs/:courseId/moduler/:moduleId" element={<Modules />} />
+          <Route
+            path="/kurs/:courseId/moduler/:moduleId/leksjoner/:lessonId"
+            element={<Lesson />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <footer className="site-footer">
-        <span>EduPlan · Læringsmål</span>
+        <span>EduPlan · Læringsplattform</span>
         <span>Plass til å lære. Rom for å vokse.</span>
       </footer>
     </div>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <ThemeProvider>
       <TodoProvider>
-        <LearningGoals />
+        <HashRouter>
+          <Platform />
+        </HashRouter>
       </TodoProvider>
     </ThemeProvider>
   );
 }
-
-export default App;

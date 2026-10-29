@@ -1,8 +1,9 @@
-# EduPlan – Læringsmål
+# EduPlan – Læringsplattform
 
-React Oppgave 3: Context API og useContext. En enkel app for å legge til,
-fullføre og slette læringsmål, med progresjonsindikator og lys/mørk modus.
-Laget med JavaScript, JSX og vanlig CSS, uten ekstra avhengigheter.
+En modulbasert React-plattform med kurs, moduler og planlagte leksjoner.
+Den opprinnelige læringsmål-appen er bevart på dashboardet, med
+progresjonsindikator og lys/mørk modus. Laget med JavaScript, JSX,
+vanlig CSS, Context API og React Router.
 
 ## Kjør lokalt
 
@@ -28,7 +29,11 @@ npm run lint
 - `src/components/TodoList.jsx`: henter todos og handlingene med useContext. Viser listen med map, checkboxer og sletteknapper.
 - `src/components/Progress.jsx`: henter todos med useContext og beregner antall fullførte mål og prosent.
 - `src/components/ThemeSwitcher.jsx`: henter theme og toggleTheme med useContext.
-- `src/App.jsx`: pakker innholdet inn i begge providerne og setter sammen siden.
+- `src/App.jsx`: felles layout, navigasjon og ruter, pakket inn i begge providerne.
+- `src/pages/Dashboard.jsx`: den opprinnelige læringsmål-visningen og kurskort.
+- `src/pages/`: kursoversikt, kursdetaljer, moduler, leksjon og ikke-funnet-side.
+- `src/components/LessonView.jsx`: gjenbrukbar visning av leksjonsdata.
+- `src/content/`: kursregister, React-kursplan og navigasjonshjelpere.
 - `src/App.css`: responsivt design og CSS-variabler for begge temaene.
 - `src/index.css`: grunnleggende stiler og tastaturfokus.
 - `index.html`: norsk sidespråk, beskrivelse og sidetittel.
@@ -63,3 +68,38 @@ Mål og tema ligger bare i React-state og tilbakestilles ved oppdatering av side
 8. Slett det siste målet. Tomtilstanden og 0 av 0 skal vises igjen.
 9. Bytt tema to ganger. Teksten og fargene skal følge valgt tema, og målene skal bevares under temabytte.
 10. Test smal skjerm og tastaturnavigasjon med Tab, Enter og mellomrom.
+
+
+## Kursstruktur og navigasjon
+
+React-kurset inneholder 14 moduler (modul 0–13 i kursplanen) og 65 planlagte
+leksjoner. Grensesnittet nummererer modulene fra 1 til 14. Innhold, læringsmål,
+kodeeksempler og oppgaver er tomme inntil leksjonene utarbeides.
+Se `src/content/README.md` for dataformatet.
+
+Ruter inne i HashRouter:
+
+- `/`: dashboard med læringsmål og kurskort.
+- `/kurs`: kursoversikt.
+- `/kurs/:courseId`: kursdetaljer.
+- `/kurs/:courseId/moduler`: alle moduler med leksjoner.
+- `/kurs/:courseId/moduler/:moduleId`: én modul med leksjoner.
+- `/kurs/:courseId/moduler/:moduleId/leksjoner/:lessonId`: leksjonsvisning.
+- Ugyldige adresser og ukjente ID-er viser en ikke-funnet-side.
+
+HashRouter holder rutene etter `#`, slik at direkte lenker og sideoppdatering
+fungerer på statisk hosting uten nye serverregler. Vites eksisterende `base`
+og GitHub Pages-skriptene er beholdt. Ingen deploy utføres som del av utviklingen.
+Tema og læringsmål bevares under navigasjon, men nullstilles ved sideoppdatering.
+
+## Manuell kontroll av kursplattformen
+
+1. Åpne kursoversikten fra dashboardet og velg React-kurset.
+2. Kontroller at kurset har 14 moduler og 65 planlagte leksjoner.
+3. Åpne moduloversikten, velg en modul og åpne en leksjon.
+4. Kontroller plassholderne og forrige/neste, også over modulgrenser.
+5. Kontroller første og siste leksjon, brødsmuler og nettleserens tilbakeknapp.
+6. Oppdater siden på en direkte leksjonslenke og prøv en ugyldig ID.
+7. Bytt tema og legg til et læringsmål. Naviger til kurset og tilbake;
+   temaet og læringsmålet skal være bevart.
+8. Kontroller mobilbredde, tastaturfokus og lenken «Hopp til innhold».
