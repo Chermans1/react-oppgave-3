@@ -22,7 +22,8 @@ Hvert leksjonspar i `modulePlans` er `[id, title]` og utvides til:
 ```
 
 Leksjonen «Hva er en React-komponent?» ligger i `lessons/reactComponents.js`
-og har introduksjon, læringsmål, kodeeksempel og tre demonstrasjonsoppgaver.
+og har sju undervisningsseksjoner, læringsmål og tre demonstrasjonsoppgaver.
+Seksjonene ligger i `lessons/reactComponentSections.js`.
 Resten av leksjonene har fortsatt tomme innholdsfelt. `LessonView` viser
 plassholdere der innhold mangler. Kodeeksempler og innsendt kode er kun tekst;
 ingen JavaScript kjøres.
@@ -118,3 +119,44 @@ lagringsnøkkel. De holdes adskilt fra TodoContext og personlige mål.
 Kursmål krever ikke at studenten krysser av «gjennomgått». Den eksisterende
 statusen for hele leksjonen krever fortsatt både gjennomgått og riktige svar
 på alle leksjonens oppgaver. Dette er to ulike vurderinger.
+
+
+## Seksjonsbasert undervisning
+
+Leksjoner kan ha en valgfri `sections`-liste. Hver seksjon har stabil `id`,
+`title`, `stage` og en ordnet liste `blocks`. Leksjoner uten seksjoner bruker
+fortsatt eksisterende `content` og `codeExamples`; de andre leksjonenes data er
+ikke endret. De to formatene rendres ikke samtidig.
+
+```js
+{
+  id: "forste-komponent",
+  title: "Din første React-komponent",
+  stage: "Forklaring",
+  blocks: [
+    { type: "paragraph", text: "En kort forklaring." },
+    {
+      type: "code", title: "Kodeeksempel", language: "jsx", code: "...",
+      notes: [{ term: "return", text: "Forklaring knyttet til koden." }]
+    },
+    { type: "preview", caption: "Resultatet", nodes: [{ tag: "h1", text: "Hei!" }] }
+  ]
+}
+```
+
+Støttede blokker er `paragraph`, `list` (`items`), `code` (med valgfrie `notes`),
+`componentTree` (`caption`, `root` med `name`, `description`, `children`),
+`preview` (`caption`, `nodes`), `exercises`, `goals` og `progress`.
+
+`LessonSections` tilbyr fri navigasjon som flytter fokus til seksjonen, uten å
+endre HashRouter-adressen eller registrere mestring. Alle seksjoner og oppgaver
+rendres med en gang. `TeachingSection` og `TeachingBlock` viser innholdet.
+`exercises` gjenbruker den eksisterende oppgavemotoren og leksjonens oppgavedata.
+`goals` og `progress` bruker eksisterende beregning og Context.
+
+Visuelle forhåndsvisninger er deklarative, statiske elementtrær. Hver node har
+`tag`, valgfri `text` og valgfrie `children`. Bare godkjente elementtyper vises,
+og kildeteksten evalueres aldri. En demonstrert `main` vises som en div for å
+unngå et ekstra main-landemerke inne i appens hovedinnhold. Foreløpig støttes
+h1, h2, p, span, article og main. Forhåndsvisningene skal vedlikeholdes sammen
+med kodeeksemplene; tester kontrollerer innholdet i de første eksemplene.

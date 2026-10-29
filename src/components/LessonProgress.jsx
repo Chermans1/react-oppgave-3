@@ -1,12 +1,13 @@
 import { useLearningProgress } from "../hooks/useLearningProgress.js";
 import { getLessonProgress } from "../progress/progress.js";
 
-export default function LessonProgress({ lesson, lessonKey }) {
+export default function LessonProgress({ lesson, lessonKey, nested = false }) {
+  const Heading = nested ? "h3" : "h2";
   const { progress, storageError, setReviewed } = useLearningProgress();
   const summary = getLessonProgress(progress, lessonKey, lesson.exercises);
   return (
     <section className="lesson-learning-progress" aria-label="Din leksjonsprogresjon">
-      <h2>Din leksjonsprogresjon</h2>
+      <Heading>Din leksjonsprogresjon</Heading>
       <dl className="learning-progress-stats" aria-live="polite">
         <div><dt>Gjennomgått</dt><dd>{summary.reviewed ? "Ja" : "Nei"}</dd></div>
         <div><dt>Oppgaver besvart</dt><dd>{summary.answered} av {summary.total}</dd></div>

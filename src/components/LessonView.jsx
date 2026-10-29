@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import ExerciseRenderer from "./exercises/ExerciseRenderer.jsx";
+import LessonExercises from "./LessonExercises.jsx";
+import LessonSections from "./lesson/LessonSections.jsx";
 import LessonGoals from "./LessonGoals.jsx";
 import LessonProgress from "./LessonProgress.jsx";
 
@@ -20,43 +21,39 @@ export default function LessonView({ lesson, navigation, lessonKey }) {
           </p>
         )}
         <LessonGoals lesson={lesson} lessonKey={lessonKey} />
-        <section>
-          <h2>Forklaring</h2>
-          {lesson.content.length ? (
-            lesson.content.map((paragraph, index) => <p key={index}>{paragraph}</p>)
-          ) : (
-            <p className="muted">Forklaringsteksten er ikke publisert ennå.</p>
-          )}
-        </section>
-        <section>
-          <h2>Kodeeksempler</h2>
-          {lesson.codeExamples.length ? (
-            lesson.codeExamples.map((example) => (
-              <figure key={example.id}>
-                <figcaption>{example.title}</figcaption>
-                <pre><code>{example.code}</code></pre>
-              </figure>
-            ))
-          ) : (
-            <p className="muted">Kodeeksempler kommer her.</p>
-          )}
-        </section>
-        <section className="exercise-placeholder">
-          <span className="eyebrow">PRØV SELV</span>
-          <h2>Interaktive oppgaver</h2>
-          {lesson.exercises.length ? (
-            <div className="exercise-list">
-              {lesson.exercises.map((question, index) => (
-                <ExerciseRenderer key={question.id} number={index + 1} question={question} lessonKey={lessonKey} />
-              ))}
-            </div>
-          ) : (
-            <p className="muted">
-              Her blir det plass til interaktive oppgaver. Ingen oppgaver er tilgjengelige ennå.
-            </p>
-          )}
-        </section>
-        <LessonProgress lesson={lesson} lessonKey={lessonKey} />
+        {lesson.sections?.length ? (
+          <LessonSections lesson={lesson} lessonKey={lessonKey} />
+        ) : (
+          <>
+            <section>
+              <h2>Forklaring</h2>
+              {lesson.content.length ? (
+                lesson.content.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+              ) : (
+                <p className="muted">Forklaringsteksten er ikke publisert ennå.</p>
+              )}
+            </section>
+            <section>
+              <h2>Kodeeksempler</h2>
+              {lesson.codeExamples.length ? (
+                lesson.codeExamples.map((example) => (
+                  <figure key={example.id}>
+                    <figcaption>{example.title}</figcaption>
+                    <pre><code>{example.code}</code></pre>
+                  </figure>
+                ))
+              ) : (
+                <p className="muted">Kodeeksempler kommer her.</p>
+              )}
+            </section>
+            <section className="exercise-placeholder">
+              <span className="eyebrow">PRØV SELV</span>
+              <h2>Interaktive oppgaver</h2>
+              <LessonExercises lesson={lesson} lessonKey={lessonKey} />
+            </section>
+            <LessonProgress lesson={lesson} lessonKey={lessonKey} />
+          </>
+        )}
       </article>
       <nav className="lesson-navigation" aria-label="Leksjonsnavigasjon">
         {navigation.previous ? (

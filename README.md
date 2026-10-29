@@ -169,3 +169,21 @@ for datastruktur og skillet mellom kursmål og leksjonsmestring.
 Kontroller kursmål ved å besvare bare én av oppgavene knyttet til målet om
 funksjonskomponenter. Målet skal være «Under arbeid» til begge er riktige.
 Dashboard og leksjon skal vise samme status, også etter sideoppdatering.
+
+
+## Første komplette React-leksjon
+
+«Hva er en React-komponent?» har sju seksjoner: komponentoppdeling av en
+skoleplattform, første funksjonskomponent, bruk i App, gjenbruk, JSX-regler,
+interaktive oppgaver og oppsummering. Kodeblokker har tilhørende forklaringer,
+et visuelt komponenttre og statiske forhåndsvisninger av nettleserresultatet.
+
+Undervisningen ligger i `src/content/lessons/reactComponentSections.js` og
+kobles til leksjonen fra `reactComponents.js`. `src/components/lesson/` rendrer
+seksjoner og blokker generisk. Studenten kan gå rett til oppgavene fra
+seksjonsmenyen uten å låse opp innhold. Eksisterende oppgave-ID-er, kursmål,
+lagring, navigasjon og de andre leksjonenes innhold er bevart.
+
+Nye tester kontrollerer at alle seksjoner og oppgaver er tilgjengelige,
+at kode og visuelle resultater samsvarer, at undervisningen ikke kopierer
+oppgavefasit, og at leksjoner uten seksjoner fortsatt bruker tidligere visning.

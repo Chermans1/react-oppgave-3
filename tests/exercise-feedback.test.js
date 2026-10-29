@@ -14,8 +14,12 @@ let QuestionFrame;
 let CourseGoals;
 let LessonGoals;
 let LearningProgressContext;
+let LessonView;
+let VisualExample;
 before(async () => {
   server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false, watch: null } });
+  ({ default: LessonView } = await server.ssrLoadModule("/src/components/LessonView.jsx"));
+  ({ default: VisualExample } = await server.ssrLoadModule("/src/components/lesson/VisualExample.jsx"));
   ({ default: CourseGoals } = await server.ssrLoadModule("/src/components/CourseGoals.jsx"));
   ({ default: LessonGoals } = await server.ssrLoadModule("/src/components/LessonGoals.jsx"));
   ({ LearningProgressContext } = await server.ssrLoadModule("/src/context/LearningProgressContext.js"));
@@ -104,4 +108,80 @@ test("dashboard and lesson render identical goal statuses from the same saved an
     assert.equal(lesson.includes('type="checkbox"'), false);
     assert.equal((dashboard.match(/Til leksjonen:/g) ?? []).length, 4);
   }
+});
+
+
+function renderLesson(lesson = reactComponentsLesson) {
+  return renderToStaticMarkup(createElement(MemoryRouter, null,
+    createElement(LearningProgressContext.Provider, {
+      value: { progress: emptyProgress(), storageError: "", setReviewed() {}, submitAnswer() {} },
+    }, createElement(LessonView, {
+      lesson,
+      lessonKey: lessonPath("react", "jsx-komponenter", lesson.id),
+      navigation: { previous: null, next: null },
+    })),
+  ));
+}
+
+test("all seven sections and exercises render immediately with free section navigation", () => {
+  const html = renderLesson();
+  const sections = reactComponentsLesson.sections;
+  assert.equal(sections.length, 7);
+  assert.equal(new Set(sections.map((section) => section.id)).size, 7);
+  assert.equal((html.match(/class="teaching-section"/g) ?? []).length, 7);
+  for (const section of sections) assert.ok(html.includes(escaped(section.title)));
+  assert.equal((html.match(/<button type="button"/g) ?? []).length, 7);
+  for (const question of reactComponentsLesson.exercises) assert.ok(html.includes(escaped(question.prompt)));
+  assert.equal(html.includes("Riktig svar:"), false);
+  assert.ok(html.includes("Kursmål og mestring"));
+  assert.ok(html.includes("Din leksjonsprogresjon"));
+});
+
+test("teaching examples supply concepts without copying exercise answers", () => {
+  const sections = reactComponentsLesson.sections;
+  const source = JSON.stringify(sections);
+  assert.equal(source.includes("courseName"), false);
+  assert.equal(source.includes("Husk en kort pause."), false);
+  assert.equal(source.includes(reactComponentsLesson.exercises[0].options[1].text), false);
+  const code = sections.flatMap((section) => section.blocks).filter((block) => block.type === "code");
+  assert.ok(code.some((block) => block.code.includes("<Welcome />")));
+  assert.ok(code.some((block) => block.code.includes("const course =")));
+});
+
+test("visual results match Welcome, the variable value and three CourseCard usages", () => {
+  const blocks = reactComponentsLesson.sections.flatMap((section) => section.blocks);
+  const previews = blocks.filter((block) => block.type === "preview");
+  const renderPreview = (block) => renderToStaticMarkup(createElement(VisualExample, block));
+  const welcome = previews.find((block) => block.nodes[0].tag === "h1");
+  assert.ok(renderPreview(welcome).includes("Velkommen til React!"));
+  const cards = previews.find((block) => block.nodes[0].tag === "main");
+  const cardHtml = renderPreview(cards);
+  assert.equal((cardHtml.match(/<article /g) ?? []).length, 3);
+  assert.equal((cardHtml.match(/React for nybegynnere/g) ?? []).length, 3);
+  const cardCode = blocks.find((block) => block.type === "code" && block.code.includes("function CourseCard"));
+  assert.equal((cardCode.code.match(/<CourseCard \/>/g) ?? []).length, 3);
+  assert.equal(cardHtml.includes("<main"), false);
+  const badge = previews.find((block) => block.nodes[0].tag === "span");
+  assert.ok(renderPreview(badge).includes('class="preview-span">React</span>'));
+  const html = renderLesson();
+  for (const component of ["App", "Header", "Navigation", "CourseList", "CourseCard", "Footer"]) {
+    assert.ok(html.includes(`<code>${component}</code>`));
+  }
+});
+
+test("preview nodes cannot run code or inject HTML", () => {
+  const html = renderToStaticMarkup(createElement(VisualExample, {
+    caption: "Test", nodes: [{ tag: "script", text: "throw new Error()" }, { tag: "span", text: "<script>alert(1)</script>" }],
+  }));
+  assert.equal(html.includes("<script>"), false);
+  assert.ok(html.includes("&lt;script&gt;"));
+});
+
+test("lessons without sections retain the existing placeholder view", () => {
+  const planned = reactCourse.modules[0].lessons[0];
+  const html = renderLesson(planned);
+  assert.ok(html.includes("Forklaringsteksten er ikke publisert ennå."));
+  assert.ok(html.includes("Kodeeksempler kommer her."));
+  assert.ok(html.includes("Ingen oppgaver er tilgjengelige ennå."));
+  assert.equal(html.includes("teaching-section"), false);
 });

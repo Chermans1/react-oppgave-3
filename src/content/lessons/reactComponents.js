@@ -1,3 +1,5 @@
+import { reactComponentSections } from "./reactComponentSections.js";
+
 export const reactComponentsLesson = {
   id: "funksjonskomponenter",
   title: "Hva er en React-komponent?",
@@ -24,17 +26,9 @@ export const reactComponentsLesson = {
       exerciseIds: ["jsx-closing-tag"],
     },
   ],
-  content: [
-    "En React-komponent beskriver en del av brukergrensesnittet. Du kan sette sammen små komponenter til større visninger og bruke samme komponent flere steder.",
-    "En funksjonskomponent er en JavaScript-funksjon som kan returnere JSX. JSX beskriver hva som skal vises. I eksemplet returnerer Greeting en overskrift. Komponentnavn begynner med stor bokstav, og komponenten kan brukes som <Greeting />.",
-    "JSX kan vise tekst fra JavaScript-variabler ved å sette variabelnavnet i klammeparenteser. JSX-tagger må også lukkes med riktig taggnavn. Oppgavene under lar deg øve på ulike sider av dette med hver sitt eksempel.",
-  ],
-  codeExamples: [{
-    id: "greeting-component",
-    title: "En enkel funksjonskomponent",
-    language: "jsx",
-    code: 'function Greeting() {\n  return <h1>Hei!</h1>;\n}',
-  }],
+  sections: reactComponentSections,
+  content: [],
+  codeExamples: [],
   exercises: [
     {
       id: "component-definition",
