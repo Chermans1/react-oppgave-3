@@ -28,7 +28,7 @@ export default function Modules() {
           {selectedModule ? `MODUL ${course.modules.indexOf(selectedModule) + 1}` : "KURSSTRUKTUR"}
         </span>
         <h1>{selectedModule?.title ?? "Moduloversikt"}</h1>
-        <p>{selectedModule?.description ?? `Se alle modulene og de planlagte leksjonene i ${course.title}.`}</p>
+        <p>{selectedModule?.description ?? `Se alle modulene og de leksjonene i ${course.title}.`}</p>
       </header>
       <div className="module-sections page-section">
         {modules.map((module) => (
@@ -39,13 +39,13 @@ export default function Modules() {
                 <p className="muted">{module.description}</p>
               </>
             )}
-            <h2 className="lessons-heading">Planlagte leksjoner</h2>
+            <h2 className="lessons-heading">Leksjoner</h2>
             <ol className="lesson-list">
               {module.lessons.map((lesson) => (
                 <li key={lesson.id}>
                   <Link to={lessonPath(course.id, module.id, lesson.id)}>
                     <span>{lesson.title}</span>
-                    <span className="status-badge">Planlagt</span>
+                    <span className="status-badge">{lesson.status === "planned" ? "Planlagt" : lesson.exercises.length ? "Med oppgaver" : "Tilgjengelig"}</span>
                   </Link>
                 </li>
               ))}

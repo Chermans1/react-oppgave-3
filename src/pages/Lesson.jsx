@@ -3,6 +3,7 @@ import {
   coursePath,
   getCourse,
   getLessonNavigation,
+  lessonPath,
   modulePath,
 } from "../content/courses.js";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
@@ -24,6 +25,8 @@ export default function Lesson() {
         { label: lesson.title },
       ]} />
       <LessonView
+        key={lessonPath(course.id, module.id, lesson.id)}
+        lessonKey={lessonPath(course.id, module.id, lesson.id)}
         lesson={lesson}
         navigation={getLessonNavigation(course, module.id, lesson.id)}
       />

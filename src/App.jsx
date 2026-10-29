@@ -10,6 +10,7 @@ import {
 import { TodoProvider } from "./context/TodoProvider.jsx";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import { ThemeContext } from "./context/ThemeContext.js";
+import LearningProgressProvider from "./context/LearningProgressProvider.jsx";
 import ThemeSwitcher from "./components/ThemeSwitcher.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Courses from "./pages/Courses.jsx";
@@ -97,9 +98,11 @@ export default function App() {
   return (
     <ThemeProvider>
       <TodoProvider>
-        <HashRouter>
-          <Platform />
-        </HashRouter>
+        <LearningProgressProvider>
+          <HashRouter>
+            <Platform />
+          </HashRouter>
+        </LearningProgressProvider>
       </TodoProvider>
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { coursePath, getCourse, getLessonCount, modulePath } from "../content/courses.js";
+import { coursePath, getCourse, getLessonCount, lessonPath, modulePath } from "../content/courses.js";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
 import NotFound from "./NotFound.jsx";
 
@@ -7,6 +7,9 @@ export default function CourseDetails() {
   const { courseId } = useParams();
   const course = getCourse(courseId);
   if (!course) return <NotFound />;
+  const firstAvailable = course.modules.flatMap((module) =>
+    module.lessons.map((lesson) => ({ module, lesson })),
+  ).find(({ lesson }) => lesson.status !== "planned");
 
   return (
     <>
@@ -18,11 +21,17 @@ export default function CourseDetails() {
       </header>
       <div className="course-summary">
         <span><strong>{course.modules.length}</strong> moduler</span>
-        <span><strong>{getLessonCount(course)}</strong> planlagte leksjoner</span>
+        <span><strong>{getLessonCount(course)}</strong> leksjoner</span>
         <span>Fra grunnleggende til avansert</span>
       </div>
       <p className="notice">
-        Kursstrukturen er klar. Leksjonene er foreløpig planlagt, og undervisningsinnhold og oppgaver kommer senere.
+        {firstAvailable ? (
+          <>
+            Prøv en leksjon: <Link to={lessonPath(course.id, firstAvailable.module.id, firstAvailable.lesson.id)}>
+              {firstAvailable.lesson.title}
+            </Link>. Flere leksjoner kommer etter hvert.
+          </>
+        ) : "Kursstrukturen er klar. Undervisningsinnhold og oppgaver kommer senere."}
       </p>
       <section className="page-section" aria-labelledby="modules-title">
         <div className="section-heading">
@@ -40,7 +49,7 @@ export default function CourseDetails() {
               <div>
                 <h3><Link to={modulePath(course.id, module.id)}>{module.title}</Link></h3>
                 <p>{module.description}</p>
-                <span className="muted">{module.lessons.length} planlagte leksjoner</span>
+                <span className="muted">{module.lessons.length} leksjoner</span>
               </div>
               <span className="module-arrow" aria-hidden="true">↗</span>
             </li>

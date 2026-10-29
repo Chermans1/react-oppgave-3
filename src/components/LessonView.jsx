@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function LessonView({ lesson, navigation }) {
+import ExerciseRenderer from "./exercises/ExerciseRenderer.jsx";
+import LessonProgress from "./LessonProgress.jsx";
+
+export default function LessonView({ lesson, navigation, lessonKey }) {
   return (
     <>
       <header className="intro">
@@ -48,13 +51,18 @@ export default function LessonView({ lesson, navigation }) {
           <span className="eyebrow">PRØV SELV</span>
           <h2>Interaktive oppgaver</h2>
           {lesson.exercises.length ? (
-            <ul>{lesson.exercises.map((exercise) => <li key={exercise.id}>{exercise.title}</li>)}</ul>
+            <div className="exercise-list">
+              {lesson.exercises.map((question, index) => (
+                <ExerciseRenderer key={question.id} number={index + 1} question={question} lessonKey={lessonKey} />
+              ))}
+            </div>
           ) : (
             <p className="muted">
               Her blir det plass til interaktive oppgaver. Ingen oppgaver er tilgjengelige ennå.
             </p>
           )}
         </section>
+        <LessonProgress lesson={lesson} lessonKey={lessonKey} />
       </article>
       <nav className="lesson-navigation" aria-label="Leksjonsnavigasjon">
         {navigation.previous ? (

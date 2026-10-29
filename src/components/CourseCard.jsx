@@ -12,7 +12,7 @@ export default function CourseCard({ course }) {
       <p>{course.description}</p>
       <div className="course-meta">
         <span>{course.modules.length} moduler</span>
-        <span>{getLessonCount(course)} planlagte leksjoner</span>
+        <span>{getLessonCount(course)} leksjoner</span>
       </div>
       <Link className="text-link" to={coursePath(course.id)}>
         Utforsk kurset <span aria-hidden="true">→</span>

@@ -1,3 +1,5 @@
+import { reactComponentsLesson } from "./lessons/reactComponents.js";
+
 // Stable IDs keep links valid when titles or the order of modules change.
 const modulePlans = [
   {
@@ -18,7 +20,7 @@ const modulePlans = [
     lessons: [
       ["fra-main-til-app", "Fra main.jsx til App"],
       ["jsx-regler", "JSX-regler og uttrykk"],
-      ["funksjonskomponenter", "Funksjonskomponenter"],
+      ["funksjonskomponenter", "Hva er en React-komponent?"],
       ["fragmenter-komponenttraer", "Fragmenter og komponenttrær"],
     ],
   },
@@ -172,14 +174,18 @@ export const reactCourse = {
   status: "planned",
   modules: modulePlans.map((module) => ({
     ...module,
-    lessons: module.lessons.map(([id, title]) => ({
-      id,
-      title,
-      status: "planned",
-      learningObjectives: [],
-      content: [],
-      codeExamples: [],
-      exercises: [],
-    })),
+    lessons: module.lessons.map(([id, title]) =>
+      module.id === "jsx-komponenter" && id === reactComponentsLesson.id
+        ? reactComponentsLesson
+        : {
+            id,
+            title,
+            status: "planned",
+            learningObjectives: [],
+            content: [],
+            codeExamples: [],
+            exercises: [],
+          },
+    ),
   })),
 };
