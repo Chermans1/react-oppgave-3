@@ -146,3 +146,26 @@ Oppgavenummer, ferdighet og oppgavetype vises separat fra tittelen.
 Oppgavene kan fortsatt leses og løses i valgfri rekkefølge. Fasit og forklaring
 vises først etter innsending på den aktuelle oppgaven, også når annen
 oppgaveprogresjon allerede er lagret.
+
+
+## Automatiske kursmål
+
+Dashboardet skiller nå mellom React-kursets kursmål og personlige læringsmål.
+Kursmålene viser status, antall beståtte tilknyttede oppgaver og lenke til
+leksjonen. Samlet kursprogresjon viser andelen definerte kursmål som er mestret.
+Leksjonens kursmål vises øverst og oppdateres når oppgaver sendes inn.
+
+Kursmål har stabile ID-er, beskrivelser og `exerciseIds` i kursdata.
+Status beregnes fra eksisterende lagrede oppgaveforsøk og lagres ikke separat.
+«Ikke startet» betyr ingen forsøk, «Under arbeid» betyr at ikke alle tilknyttede
+oppgaver er bestått, og «Mestret» krever at alle er bestått. Mål uten oppgaver
+kan ikke mestres automatisk. Et nytt feil svar kan endre status tilbake til
+«Under arbeid», slik siste-resultat-logikken allerede fungerer.
+
+Personlige mål opprettes, fullføres og slettes som før i TodoContext.
+Kursmål kan ikke markeres som mestret manuelt. Se `src/content/README.md`
+for datastruktur og skillet mellom kursmål og leksjonsmestring.
+
+Kontroller kursmål ved å besvare bare én av oppgavene knyttet til målet om
+funksjonskomponenter. Målet skal være «Under arbeid» til begge er riktige.
+Dashboard og leksjon skal vise samme status, også etter sideoppdatering.

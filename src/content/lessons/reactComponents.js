@@ -3,10 +3,26 @@ export const reactComponentsLesson = {
   title: "Hva er en React-komponent?",
   status: "available",
   learningObjectives: [
-    "Forklare at en komponent er en gjenbrukbar del av brukergrensesnittet.",
-    "Gjenkjenne en enkel funksjonskomponent som returnerer JSX.",
-    "Bruke en lokal variabel som tekst i JSX.",
-    "Oppdage at en JSX-starttagg og sluttagg må passe sammen.",
+    {
+      id: "reusable-component",
+      description: "Forklare at en komponent er en gjenbrukbar del av brukergrensesnittet.",
+      exerciseIds: ["component-definition"],
+    },
+    {
+      id: "function-component-jsx",
+      description: "Gjenkjenne og arbeide med en enkel funksjonskomponent som returnerer JSX.",
+      exerciseIds: ["component-return", "jsx-closing-tag"],
+    },
+    {
+      id: "jsx-variable",
+      description: "Bruke en lokal variabel som tekst i JSX.",
+      exerciseIds: ["component-return"],
+    },
+    {
+      id: "matching-jsx-tags",
+      description: "Oppdage at en JSX-starttagg og sluttagg må passe sammen.",
+      exerciseIds: ["jsx-closing-tag"],
+    },
   ],
   content: [
     "En React-komponent beskriver en del av brukergrensesnittet. Du kan sette sammen små komponenter til større visninger og bruke samme komponent flere steder.",

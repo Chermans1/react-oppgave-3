@@ -3,12 +3,22 @@ import assert from "node:assert/strict";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
+import { MemoryRouter } from "react-router-dom";
+import { emptyProgress, recordAnswer } from "../src/progress/progress.js";
+import { lessonPath } from "../src/content/courses.js";
+import { reactCourse } from "../src/content/reactCourse.js";
 import { reactComponentsLesson } from "../src/content/lessons/reactComponents.js";
 
 let server;
 let QuestionFrame;
+let CourseGoals;
+let LessonGoals;
+let LearningProgressContext;
 before(async () => {
   server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false, watch: null } });
+  ({ default: CourseGoals } = await server.ssrLoadModule("/src/components/CourseGoals.jsx"));
+  ({ default: LessonGoals } = await server.ssrLoadModule("/src/components/LessonGoals.jsx"));
+  ({ LearningProgressContext } = await server.ssrLoadModule("/src/context/LearningProgressContext.js"));
   ({ default: QuestionFrame } = await server.ssrLoadModule("/src/components/exercises/QuestionFrame.jsx"));
 });
 after(async () => { await server?.close(); });
@@ -65,5 +75,33 @@ test("only the submitted question renders its own feedback, for both outcomes", 
         assert.equal(html.includes(escaped(other.explanation)), false);
       }
     }
+  }
+});
+
+
+test("dashboard and lesson render identical goal statuses from the same saved answers", () => {
+  const key = lessonPath("react", "jsx-komponenter", reactComponentsLesson.id);
+  const states = [emptyProgress()];
+  let progress = emptyProgress();
+  for (const question of reactComponentsLesson.exercises) {
+    progress = recordAnswer(progress, key, question.id, true);
+    states.push(progress);
+  }
+  for (const saved of states) {
+    const render = (Component, props) => renderToStaticMarkup(
+      createElement(MemoryRouter, null,
+        createElement(LearningProgressContext.Provider, { value: { progress: saved } },
+          createElement(Component, props),
+        ),
+      ),
+    );
+    const dashboard = render(CourseGoals, { course: reactCourse });
+    const lesson = render(LessonGoals, { lesson: reactComponentsLesson, lessonKey: key });
+    const statuses = (html) => [...html.matchAll(/goal-status goal-status-([^" ]+)/g)].map((match) => match[1]);
+    assert.deepEqual(statuses(dashboard), statuses(lesson));
+    assert.equal(statuses(dashboard).length, 4);
+    assert.equal(dashboard.includes('type="checkbox"'), false);
+    assert.equal(lesson.includes('type="checkbox"'), false);
+    assert.equal((dashboard.match(/Til leksjonen:/g) ?? []).length, 4);
   }
 });

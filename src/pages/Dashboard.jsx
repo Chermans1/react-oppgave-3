@@ -3,6 +3,7 @@ import { courses } from "../content/courses.js";
 import CourseCard from "../components/CourseCard.jsx";
 import AddTodo from "../components/AddTodo.jsx";
 import TodoList from "../components/TodoList.jsx";
+import CourseGoals from "../components/CourseGoals.jsx";
 import Progress from "../components/Progress.jsx";
 
 export default function Dashboard() {
@@ -15,9 +16,10 @@ export default function Dashboard() {
         </div>
         <div className="course-grid">{courses.map((course) => <CourseCard key={course.id} course={course} />)}</div>
       </section>
-        <section className="intro" aria-labelledby="goals-intro-title">
+      {courses.map((course) => <CourseGoals key={course.id} course={course} />)}
+        <section className="intro personal-goals-intro" aria-labelledby="goals-intro-title">
           <span className="eyebrow">SMÅ STEG. NY KUNNSKAP.</span>
-          <h1 id="goals-intro-title">Din oversikt over læringsmål</h1>
+          <h1 id="goals-intro-title">Dine personlige læringsmål</h1>
           <p>
             Gi læringen retning. Sett deg et mål, ta ett steg av gangen og se
             fremgangen din.
@@ -29,7 +31,7 @@ export default function Dashboard() {
             <div className="panel-heading">
               <div>
                 <span className="eyebrow">DITT NESTE STEG</span>
-                <h2 id="goals-title">Mine læringsmål</h2>
+                <h2 id="goals-title">Personlige læringsmål</h2>
               </div>
               <span className="section-icon" aria-hidden="true">
                 ↗
@@ -53,7 +55,7 @@ export default function Dashboard() {
           </aside>
         </div>
         <p className="session-note">
-          Målene dine lagres i denne økten. Ved oppdatering av siden starter du
+          De personlige målene dine lagres i denne økten. Ved oppdatering av siden starter du
           på nytt.
         </p>
     </>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import ExerciseRenderer from "./exercises/ExerciseRenderer.jsx";
+import LessonGoals from "./LessonGoals.jsx";
 import LessonProgress from "./LessonProgress.jsx";
 
 export default function LessonView({ lesson, navigation, lessonKey }) {
@@ -18,14 +19,7 @@ export default function LessonView({ lesson, navigation, lessonKey }) {
             Denne leksjonen er planlagt. Undervisningsinnhold og oppgaver kommer senere.
           </p>
         )}
-        <section>
-          <h2>Læringsmål</h2>
-          {lesson.learningObjectives.length ? (
-            <ul>{lesson.learningObjectives.map((goal) => <li key={goal}>{goal}</li>)}</ul>
-          ) : (
-            <p className="muted">Læringsmål legges til når leksjonen utarbeides.</p>
-          )}
-        </section>
+        <LessonGoals lesson={lesson} lessonKey={lessonKey} />
         <section>
           <h2>Forklaring</h2>
           {lesson.content.length ? (

@@ -10,12 +10,12 @@ function Progress() {
   return (
     <section className="progress-panel" aria-labelledby="progress-title">
       <span className="eyebrow">SE HVOR LANGT DU HAR KOMMET</span>
-      <h2 id="progress-title">Din progresjon</h2>
+      <h2 id="progress-title">Personlig progresjon</h2>
       <div className="progress-number" aria-live="polite">
         {completedCount}
         <span> / {todos.length}</span>
       </div>
-      <p className="progress-caption">læringsmål fullført</p>
+      <p className="progress-caption">personlige mål fullført</p>
       <div className="progress-label">
         <span>Fullført</span>
         <strong>{percentage} %</strong>
@@ -23,7 +23,7 @@ function Progress() {
       <progress
         value={completedCount}
         max={todos.length || 1}
-        aria-label="Andel fullførte læringsmål"
+        aria-label="Andel fullførte personlige læringsmål"
       />
       <p className="progress-message">
         {todos.length === 0

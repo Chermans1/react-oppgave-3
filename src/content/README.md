@@ -14,7 +14,7 @@ Hvert leksjonspar i `modulePlans` er `[id, title]` og utvides til:
   id: "jsx-regler",
   title: "JSX-regler og uttrykk",
   status: "planned",
-  learningObjectives: [], // strenger
+  learningObjectives: [], // { id, description, exerciseIds }
   content: [],           // forklaringsavsnitt som strenger
   codeExamples: [],      // { id, title, language, code }
   exercises: [],         // { id, title, type, instructions }
@@ -79,3 +79,42 @@ svar eller fjerning av gjennomgått-markeringen fjerner mestringsstatusen.
 Å åpne en leksjon skriver ingen progresjon. Input og valgt alternativ er
 midlertidige; etter sideoppdatering vises sist lagrede resultat og antall forsøk.
 Ved lagringsfeil beholdes progresjonen i minnet og en melding vises.
+
+
+## Kursmål og personlige læringsmål
+
+Kursmål ligger i leksjonens `learningObjectives` som objekter:
+
+```js
+{
+  id: "function-component-jsx",
+  description: "Gjenkjenne og arbeide med en enkel funksjonskomponent som returnerer JSX.",
+  exerciseIds: ["component-return", "jsx-closing-tag"]
+}
+```
+
+ID-en er stabil innenfor leksjonen. Oppgave-ID-ene viser til oppgaver i samme
+leksjon; samme oppgave kan være knyttet til flere mål. En tom `exerciseIds`-liste
+er tillatt, men kan ikke gi mestring. De andre leksjonene beholder tomme
+mål-lister frem til innholdet utarbeides.
+
+Status er ikke et felt som lagres i kursdata eller localStorage.
+`src/progress/goals.js` beregner den fra eksisterende oppgaveforsøk:
+
+- `not-started` / Ikke startet: ingen tilknyttede oppgaver er forsøkt.
+- `in-progress` / Under arbeid: noen er forsøkt, men ikke alle er bestått.
+- `mastered` / Mestret: alle tilknyttede oppgaver har riktig siste innsendte svar.
+
+Mål uten oppgaver blir «Ikke startet», med beskjed om at mestring ikke kan
+vurderes. Ukjente oppgave-ID-er kan heller ikke gi mestring. Dashboardets
+samlede progresjon er antall mestrede mål delt på antall definerte kursmål,
+inkludert mål som foreløpig mangler oppgaver. Det gjelder dagens definerte mål,
+ikke planlagte fremtidige mål i alle leksjoner.
+
+Dashboard og leksjonsvisning bruker samme beregning og den delte komponenten
+`CourseGoalList`. Kursmål kan ikke krysses av manuelt og trenger ingen ny
+lagringsnøkkel. De holdes adskilt fra TodoContext og personlige mål.
+
+Kursmål krever ikke at studenten krysser av «gjennomgått». Den eksisterende
+statusen for hele leksjonen krever fortsatt både gjennomgått og riktige svar
+på alle leksjonens oppgaver. Dette er to ulike vurderinger.
