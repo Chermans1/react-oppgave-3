@@ -1,4 +1,4 @@
-import { reactCourse } from "./reactCourse.js";
+import { reactCourseManifest as reactCourse } from "./courseManifest.js";
 
 export const courses = [reactCourse];
 export const getCourse = (id) => courses.find((course) => course.id === id);

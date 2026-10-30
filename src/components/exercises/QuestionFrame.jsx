@@ -1,3 +1,4 @@
+import { isCurrentAnswer } from "../../progress/progress.js";
 import { useId } from "react";
 import { getSolution } from "./answers.js";
 
@@ -18,7 +19,8 @@ export default function QuestionFrame({ question, number, attempt, state, childr
       <h3 id={headingId}>{question.title}</h3>
       <p>{question.prompt}</p>
       {question.code && <pre><code>{question.code}</code></pre>}
-      {attempt && (
+      {attempt && !isCurrentAnswer(attempt, question) && <p className="notice">Du har tidligere svart på en eldre utgave. Resultatet er bevart, men denne oppgaven må besvares på nytt for å inngå i gjeldende kunnskapskontroll.</p>}
+      {isCurrentAnswer(attempt, question) && (
         <p className="muted">
           {attempt.attempts} innsendte forsøk · Sist besvart {attempt.correct ? "riktig" : "feil"}.
         </p>

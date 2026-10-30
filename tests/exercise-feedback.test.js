@@ -182,7 +182,7 @@ test("preview nodes cannot run code or inject HTML", () => {
 });
 
 test("lessons without sections retain the existing placeholder view", () => {
-  const planned = reactCourse.modules[0].lessons[0];
+  const planned = { id: "test-placeholder", title: "Test", status: "planned", learningObjectives: [], content: [], codeExamples: [], exercises: [] };
   const html = renderLesson(planned);
   assert.ok(html.includes("Forklaringsteksten er ikke publisert ennå."));
   assert.ok(html.includes("Kodeeksempler kommer her."));
@@ -234,4 +234,82 @@ test("JSX visual results show text/expression differences and a safely associate
   const ids = [...secondField.matchAll(/<input[^>]* id="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(new Set(ids).size, 2);
   assert.ok(render(previews[3]).includes("Med pause: 25 minutter"));
+});
+
+test("every completed lesson renders its sections, activities and hidden feedback without placeholders", () => {
+  for (const module of reactCourse.modules) for (const lesson of module.lessons) {
+    const html = renderLesson(lesson);
+    assert.equal((html.match(/class="teaching-section"/g) ?? []).length, lesson.sections.length, lesson.id);
+    assert.equal(html.includes("Denne leksjonen er planlagt"), false);
+    assert.equal(html.includes("Riktig svar:"), false);
+    for (const question of lesson.exercises) {
+      assert.equal(html.split(escaped(question.prompt)).length - 1, 1, question.id);
+      assert.equal(html.includes(escaped(question.explanation)), false, question.id);
+    }
+    if (lesson.practicalActivities?.length) {
+      assert.match(html, /Praktisk mål: gjennomføres i eget prosjekt/);
+      assert.match(html, /Kunnskapsdel mestret/);
+      assert.equal((html.match(/class="practical-activity"/g) ?? []).length, lesson.practicalActivities.length);
+      assert.equal(html.includes("practicalCompleted"), false);
+      for (const activity of lesson.practicalActivities) {
+        for (const criterion of activity.criteria) assert.ok(html.includes(escaped(criterion)));
+      }
+    }
+  }
+});
+
+test("practical work stays unassessed in dashboard and lesson even with all knowledge checks passed", () => {
+  const module = reactCourse.modules.find((m) => m.id === "sluttprosjekt");
+  const lesson = module.lessons.at(-1);
+  const key = lessonPath(reactCourse.id, module.id, lesson.id);
+  let progress = emptyProgress();
+  for (const question of lesson.exercises) progress = recordAnswer(progress, key, question.id, true);
+  progress.lessons[key].reviewed = true;
+  const render = (Component, props) => renderToStaticMarkup(createElement(MemoryRouter, null,
+    createElement(LearningProgressContext.Provider, { value: { progress, setReviewed() {} } }, createElement(Component, props)),
+  ));
+  const dashboard = render(CourseGoals, { course: reactCourse });
+  const lessonMarkup = render(LessonView, { lesson, lessonKey: key, navigation: {} });
+  const practical = getCourseGoals(reactCourse, progress).find((g) => g.id === "testing-publisering-practical-goal");
+  assert.equal(practical.status, "not-started");
+  assert.ok(dashboard.includes(escaped(practical.description)));
+  assert.ok(lessonMarkup.includes(escaped(practical.description)));
+  assert.match(lessonMarkup, /Kunnskapsdel mestret/);
+  assert.match(lessonMarkup, /denne modellen registrerer ikke praktisk gjennomføring/);
+  assert.equal(lessonMarkup.includes("Leksjon mestret"), false);
+});
+
+test("all course questions show explanation only after their own submitted result", () => {
+  for (const module of reactCourse.modules) for (const lesson of module.lessons) for (const question of lesson.exercises) {
+    const unanswered = renderQuestion(question, null, { correct: true, attempts: 1 });
+    assert.equal(unanswered.includes(escaped(question.explanation)), false, question.id);
+    for (const correct of [false, true]) {
+      const submitted = renderQuestion(question, { correct });
+      assert.ok(submitted.includes(escaped(question.explanation)), question.id);
+      assert.ok(submitted.includes(correct ? "Riktig!" : "Ikke helt riktig ennå."));
+      assert.match(submitted, /Endre svaret for å prøve igjen/);
+    }
+  }
+});
+
+test("course summary counts knowledge only and explicitly explains practical goals", () => {
+  const markup = renderToStaticMarkup(createElement(MemoryRouter, null,
+    createElement(LearningProgressContext.Provider, { value: { progress: emptyProgress() } },
+      createElement(CourseGoals, { course: reactCourse })),
+  ));
+  const goals = getCourseGoals(reactCourse, emptyProgress());
+  const practicalCount = goals.filter((g) => g.assessment === "practical").length;
+  assert.ok(markup.includes(`0 av ${goals.filter((g) => g.assessment !== "practical" && !g.optional).length} obligatoriske kunnskapsmål mestret`));
+  assert.ok(markup.includes(`kurset ${practicalCount} praktiske mål`));
+  assert.match(markup, /inngår ikke i den automatiske prosentberegningen/);
+});
+
+
+test("revised attempts remain visible history without revealing a new solution or granting mastery", () => {
+  const question = reactCourse.modules.flatMap((m) => m.lessons).flatMap((l) => l.exercises).find((q) => q.id === "dataflyt-props-values-check");
+  const markup = renderQuestion(question, null, { attempts: 3, correct: true });
+  assert.match(markup, /eldre utgave/);
+  assert.match(markup, /må besvares på nytt/);
+  assert.equal(markup.includes("Riktig svar:"), false);
+  assert.equal(markup.includes(escaped(question.explanation)), false);
 });

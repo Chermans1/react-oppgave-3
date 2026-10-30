@@ -7,17 +7,17 @@ export const reactComponentsLesson = {
   learningObjectives: [
     {
       id: "reusable-component",
-      description: "Forklare at en komponent er en gjenbrukbar del av brukergrensesnittet.",
+      description: "Gjenkjenne en komponent som en gjenbrukbar del av brukergrensesnittet.",
       exerciseIds: ["component-definition"],
     },
     {
       id: "function-component-jsx",
-      description: "Gjenkjenne og arbeide med en enkel funksjonskomponent som returnerer JSX.",
+      description: "Gjenkjenne en lokal variabel i JSX og en feil i samsvarende tagger.",
       exerciseIds: ["component-return", "jsx-closing-tag"],
     },
     {
       id: "jsx-variable",
-      description: "Bruke en lokal variabel som tekst i JSX.",
+      description: "Identifisere hvilken lokal variabel som skal vises som tekst i JSX.",
       exerciseIds: ["component-return"],
     },
     {
@@ -37,12 +37,12 @@ export const reactComponentsLesson = {
       skill: "Begrepsforståelse",
       prompt: "Et kalendergrensesnitt viser et kort for hvert arrangement. Hva betyr det at kortet er en React-komponent?",
       options: [
-        { id: "stylesheet", text: "Kortet er en CSS-fil som bestemmer alle fargene i appen." },
+        { id: "stylesheet", text: "Kortet er ferdig HTML som må kopieres manuelt hver gang et arrangement vises." },
         { id: "reusable-ui", text: "Kortet er en gjenbrukbar del av brukergrensesnittet som kan vises flere steder." },
-        { id: "database", text: "Kortet er en database som lagrer alle arrangementene." },
+        { id: "database", text: "Kortet er en funksjon som vises automatisk bare fordi filen er importert." },
       ],
       correctAnswer: "reusable-ui",
-      explanation: "En komponent beskriver en del av brukergrensesnittet. Kalenderen kan bruke den samme kortkomponenten for flere arrangementer. CSS bestemmer utseendet, og en database kan lagre data, men ingen av dem er selve grensesnittkomponenten.",
+      explanation: "En komponent beskriver en del av brukergrensesnittet og kan brukes flere steder. Definisjonen kan gjenbrukes; vi trenger ikke kopiere hele HTML-strukturen. Import gjør navnet tilgjengelig, mens komponentbruk i JSX gjør det til del av visningen.",
     },
     {
       id: "component-return",

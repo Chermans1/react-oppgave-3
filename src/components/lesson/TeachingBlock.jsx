@@ -1,3 +1,4 @@
+import PracticalActivity from "./PracticalActivity.jsx";
 import ComponentTree from "./ComponentTree.jsx";
 import VisualExample from "./VisualExample.jsx";
 import LessonExercises from "../LessonExercises.jsx";
@@ -28,6 +29,12 @@ export default function TeachingBlock({ block, lesson, lessonKey }) {
       return <VisualExample {...block} />;
     case "exercises":
       return <LessonExercises lesson={lesson} lessonKey={lessonKey} exerciseIds={block.exerciseIds} />;
+    case "practical":
+      return <PracticalActivity activity={lesson.practicalActivities?.find((activity) => activity.id === block.activityId)} />;
+    case "resources":
+      return <aside className="lesson-resources" aria-label="Videre lesing"><h3>Videre lesing</h3>
+        <ul>{block.links.map((link) => <li key={link.url}><a href={link.url}>{link.title}</a></li>)}</ul>
+      </aside>;
     case "goals":
       return <LessonGoals lesson={lesson} lessonKey={lessonKey} title={block.title} nested />;
     case "progress":

@@ -1,3 +1,4 @@
+import { completedLessons } from "./modules/index.js";
 import { jsxRulesLesson } from "./lessons/jsxRules.js";
 import { mainToAppLesson } from "./lessons/mainToApp.js";
 import { reactComponentsLesson } from "./lessons/reactComponents.js";
@@ -159,7 +160,7 @@ const modulePlans = [
   {
     id: "sluttprosjekt",
     title: "Avsluttende prosjekt: interaktiv læringsplattform",
-    description: "Planlegg hvordan React-konseptene kan samles i en helhetlig læringsplattform.",
+    description: "Bygg en liten læringsplattform gjennom fire trinn med datamodell, lagring, oppgaver og kvalitetssikring.",
     lessons: [
       ["datamodell", "Datamodell for kurs, moduler og leksjoner"],
       ["state-lagring", "Valg av state og lagring"],
@@ -170,6 +171,7 @@ const modulePlans = [
 ];
 
 const implementedLessons = {
+  ...Object.fromEntries(completedLessons.map((lesson) => [lesson.id, lesson])),
   [reactComponentsLesson.id]: reactComponentsLesson,
   [mainToAppLesson.id]: mainToAppLesson,
   [jsxRulesLesson.id]: jsxRulesLesson,
@@ -179,21 +181,13 @@ export const reactCourse = {
   id: "react",
   title: "React – fra grunnlag til læringsplattform",
   description: "En stegvis læringsreise fra JavaScript og JSX til routing, serverdata og robuste React-applikasjoner.",
-  status: "planned",
+  status: "available",
   modules: modulePlans.map((module) => ({
     ...module,
-    lessons: module.lessons.map(([id, title]) =>
-      module.id === "jsx-komponenter" && implementedLessons[id]
-        ? implementedLessons[id]
-        : {
-            id,
-            title,
-            status: "planned",
-            learningObjectives: [],
-            content: [],
-            codeExamples: [],
-            exercises: [],
-          },
-    ),
+    lessons: module.lessons.map(([id, title]) => {
+      const lesson = implementedLessons[id];
+      if (!lesson) throw new Error(`Mangler undervisningsinnhold for ${id}`);
+      return { ...lesson, title };
+    }),
   })),
 };

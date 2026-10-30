@@ -9,6 +9,7 @@ export default function LessonGoals({ lesson, lessonKey, title = "Leksjonens kur
   const { progress } = useLearningProgress();
   const goals = lesson.learningObjectives.map((goal) => ({
     ...goal,
+    optional: goal.optional === true || lesson.optional === true,
     lessonKey,
     ...getGoalProgress(progress, lessonKey, goal, lesson.exercises),
   }));

@@ -1,9 +1,9 @@
 # EduPlan – Læringsplattform
 
-En modulbasert React-plattform med kurs, moduler og planlagte leksjoner.
-Den opprinnelige læringsmål-appen er bevart på dashboardet, med
-progresjonsindikator og lys/mørk modus. Laget med JavaScript, JSX,
-vanlig CSS, Context API og React Router.
+En React-plattform med 14 moduler, 65 ferdig implementerte leksjoner,
+interaktive kunnskapsoppgaver og praktisk programmeringsarbeid.
+Laget med JavaScript/JSX, CSS, Context API og React Router.
+Lys/mørk modus og den opprinnelige personlige læringsmål-appen er bevart.
 
 ## Kjør lokalt
 
@@ -12,205 +12,84 @@ npm install
 npm run dev
 ```
 
-Åpne adressen Vite viser i terminalen.
+Kontroller prosjektet med:
 
 ```sh
 npm run build
 npm run lint
+npm test
 ```
 
-## Filstruktur
+## Kursinnhold
 
-- `src/context/TodoContext.js`: oppretter TodoContext med createContext.
-- `src/context/TodoProvider.jsx`: håndterer todos med useState og deler addTodo, toggleTodo og removeTodo.
-- `src/context/ThemeContext.js`: oppretter ThemeContext med createContext.
-- `src/context/ThemeProvider.jsx`: håndterer theme med useState og deler toggleTheme. Starttemaet er light.
-- `src/components/AddTodo.jsx`: skjema med lokalt input-state. Henter addTodo med useContext og tømmer feltet etter innsending.
-- `src/components/TodoList.jsx`: henter todos og handlingene med useContext. Viser listen med map, checkboxer og sletteknapper.
-- `src/components/Progress.jsx`: henter todos med useContext og beregner antall fullførte mål og prosent.
-- `src/components/ThemeSwitcher.jsx`: henter theme og toggleTheme med useContext.
-- `src/App.jsx`: felles layout, navigasjon og ruter, pakket inn i begge providerne.
-- `src/pages/Dashboard.jsx`: den opprinnelige læringsmål-visningen og kurskort.
-- `src/pages/`: kursoversikt, kursdetaljer, moduler, leksjon og ikke-funnet-side.
-- `src/components/LessonView.jsx`: gjenbrukbar visning av leksjonsdata.
-- `src/content/`: kursregister, React-kursplan og navigasjonshjelpere.
-- `src/App.css`: responsivt design og CSS-variabler for begge temaene.
-- `src/index.css`: grunnleggende stiler og tastaturfokus.
-- `index.html`: norsk sidespråk, beskrivelse og sidetittel.
-- `public/favicon.svg`: EduPlan-ikon til nettleserfanen.
+Kurset går fra JavaScript, JSX, props og lister til styling, state, skjemaer,
+effekter/API, hooks, lagring, Context, routing, Query, testing, robusthet og
+TypeScript. Sluttprosjektet bygger en liten læringsplattform i fire praktiske
+trinn. JavaScript ligger først og alle eksisterende ID-er er beholdt.
+Tailwind er valgfritt.
 
-## Hvordan Context API brukes
+De tre første komplette JSX-leksjonenes undervisningsseksjoner er beholdt. Mål og utvalgte svaralternativer er presisert. De 62 øvrige
+leksjonene ligger som data i `src/content/modules/`. Hver har forkunnskaper,
+introduksjon, konkrete mål, forklaring, kodeutdrag, resultatforklaring,
+3–4 fordelte kunnskapsoppgaver, en praktisk aktivitet og oppsummering.
+Utvalgte eksempler har statiske visuelle resultater.
 
-createContext oppretter en context. Provideren bruker useState til å holde
-state og sender state og funksjoner til komponentene gjennom value.
-Komponentene leser det de trenger direkte med useContext, uten at App må
-sende todos eller theme videre som props. children brukes til å plassere
-innholdet inne i providerne.
+Se [innholdsmodellen](src/content/README.md) og
+[kvalitetsrapporten](docs/react-course-quality-improvements.md) for opptelling og begrensninger.
 
-TodoProvider oppdaterer alltid state uten å endre det eksisterende arrayet:
-spread legger til et mål, map bytter done på riktig mål, og filter sletter
-målet med riktig id. Hvert mål har formen `{ id: number, text: string, done: boolean }`.
+## Arkitektur
 
-ThemeProvider bytter mellom light og dark. LearningGoals leser temaet og
-setter data-theme, som CSS bruker til å velge farger.
+- `src/content/`: kursregister, navigasjon og undervisningsdata.
+- `src/components/lesson/`: gjenbrukbar seksjonsvisning, illustrasjoner og
+  praktiske arbeidsoppgaver. Ingen studentkode kjøres.
+- `src/components/exercises/`: eksisterende oppgavemotor og tilbakemelding.
+- `src/progress/`: rene beregninger for progresjon og kursmål.
+- `src/context/`: tema, personlige mål og lagret oppgaveprogresjon.
+- `src/pages/`: dashboard, kurs, moduler, leksjoner og ikke-funnet-visning.
+- `src/App.css` og `src/index.css`: responsivt design, tema og fokusmarkering.
 
-Mål og tema ligger bare i React-state og tilbakestilles ved oppdatering av siden.
+HashRouter bruker følgende app-ruter:
+
+- `/`: dashboard og personlige mål.
+- `/kurs`: kursoversikt.
+- `/kurs/:courseId`: kursdetaljer.
+- `/kurs/:courseId/moduler`: moduloversikt.
+- `/kurs/:courseId/moduler/:moduleId`: leksjonsoversikt.
+- `/kurs/:courseId/moduler/:moduleId/leksjoner/:lessonId`: undervisning.
+
+Forrige/neste følger kursdataenes rekkefølge, også mellom moduler.
+Ukjente ruter og id-er håndteres av ikke-funnet-visningen.
+
+## Hva progresjonen dokumenterer
+
+Oppgaveprogresjon lagres lokalt under `eduplan.learning-progress.v1`.
+Formatet og tidligere lagrede resultater er beholdt. Bare gjennomgått,
+antall forsøk, siste riktighet og eventuell oppgaverevisjon lagres; ingen fasit eller svartekst.
+Kursmål avledes fra tilknyttede oppgaver og er aldri manuelt avkryssbare.
+
+Dashboardets automatiske prosent gjelder 201 obligatoriske kunnskapsmål. Valgfrie Tailwind-mål inngår ikke. Praktiske mål vises
+separat og vurderes ikke automatisk. De nye leksjonene viser «Kunnskapsdel
+mestret» slik at riktige teorisvar ikke fremstår som godkjent programmering.
+Praktisk gjennomføring i studentens eget prosjekt registreres ikke i dagens
+modell og må kontrolleres mot akseptansekriteriene.
+
+Personlige læringsmål kan fortsatt opprettes, fullføres og slettes gjennom
+TodoContext. Tema og personlige mål er midlertidig React-state og tilbakestilles
+ved full sideoppdatering; oppgaveprogresjonen er den lagrede delen.
 
 ## Manuell kontroll
 
-1. Sjekk at appen starter med lyst tema, tom liste og 0 av 0 fullført.
-2. Legg til to læringsmål, ett med knappen og ett med Enter. Feltet skal tømmes etter hvert mål.
-3. Prøv å skrive bare mellomrom. Dette skal ikke kunne legges til.
-4. Kryss av ett mål. Progresjonen skal vise 1 av 2 og 50 prosent.
-5. Fjern avkryssingen. Progresjonen skal gå tilbake til 0 prosent.
-6. Fullfør begge målene. Progresjonen skal vise 100 prosent.
-7. Slett et mål med X. Listen og progresjonen skal oppdateres.
-8. Slett det siste målet. Tomtilstanden og 0 av 0 skal vises igjen.
-9. Bytt tema to ganger. Teksten og fargene skal følge valgt tema, og målene skal bevares under temabytte.
-10. Test smal skjerm og tastaturnavigasjon med Tab, Enter og mellomrom.
+1. Åpne kurset og kontroller 14 moduler og 65 tilgjengelige leksjoner.
+2. Prøv leksjonslenker, forrige/neste, brødsmuler og direkte hash-adresser.
+3. Besvar oppgaver feil og riktig; kontroller nytt forsøk og skjult fasit i
+   andre oppgaver. Reload skal bevare resultat, men ikke åpne alle løsninger.
+4. Sammenlign kursmål på dashboard og leksjonsside.
+5. Kontroller at praktiske mål ikke godkjennes av riktige kunnskapssvar.
+6. Opprett, fullfør og slett et personlig mål.
+7. Prøv smal skjerm, tastaturnavigasjon og begge temaer.
+8. Kontroller siste prosjekttrinn og en ukjent adresse.
 
+GitHub Pages-oppsett og deploy-scripts er beholdt. Denne kursutvidelsen
+installerer ingen nye pakker og gjennomfører ingen publisering.
 
-## Kursstruktur og navigasjon
-
-React-kurset inneholder 14 moduler (modul 0–13 i kursplanen) og 65
-leksjoner. Grensesnittet nummererer modulene fra 1 til 14. Leksjonen «Hva er en
-React-komponent?» har nå tre interaktive demonstrasjonsoppgaver; resten er
-fortsatt planlagt.
-Se `src/content/README.md` for dataformatet.
-
-Ruter inne i HashRouter:
-
-- `/`: dashboard med læringsmål og kurskort.
-- `/kurs`: kursoversikt.
-- `/kurs/:courseId`: kursdetaljer.
-- `/kurs/:courseId/moduler`: alle moduler med leksjoner.
-- `/kurs/:courseId/moduler/:moduleId`: én modul med leksjoner.
-- `/kurs/:courseId/moduler/:moduleId/leksjoner/:lessonId`: leksjonsvisning.
-- Ugyldige adresser og ukjente ID-er viser en ikke-funnet-side.
-
-HashRouter holder rutene etter `#`, slik at direkte lenker og sideoppdatering
-fungerer på statisk hosting uten nye serverregler. Vites eksisterende `base`
-og GitHub Pages-skriptene er beholdt. Ingen deploy utføres som del av utviklingen.
-Tema og personlige læringsmål bevares under navigasjon, men nullstilles ved
-sideoppdatering. Leksjonsprogresjon lagres separat i localStorage.
-
-## Manuell kontroll av kursplattformen
-
-1. Åpne kursoversikten fra dashboardet og velg React-kurset.
-2. Kontroller at kurset har 14 moduler og 65 leksjoner.
-3. Åpne moduloversikten, velg en modul og åpne en leksjon.
-4. Kontroller plassholderne og forrige/neste, også over modulgrenser.
-5. Kontroller første og siste leksjon, brødsmuler og nettleserens tilbakeknapp.
-6. Oppdater siden på en direkte leksjonslenke og prøv en ugyldig ID.
-7. Bytt tema og legg til et læringsmål. Naviger til kurset og tilbake;
-   temaet og læringsmålet skal være bevart.
-8. Kontroller mobilbredde, tastaturfokus og lenken «Hopp til innhold».
-
-
-## Interaktive oppgaver
-
-I modul «JSX og komponenter» finnes leksjonen «Hva er en React-komponent?».
-Den bruker den eksisterende ID-en `funksjonskomponenter`, så gamle lenker virker.
-
-Oppgavemotoren støtter flervalg, utfylling av ett kodeuttrykk og feilfinning
-med svaralternativer. Oppgavene defineres som data i `src/content/lessons/`.
-Ingen innsendt kode kjøres, og ingen editor- eller andre avhengigheter er lagt til.
-
-Leksjonsprogresjonen skiller mellom gjennomgått, besvart, riktig og mestret.
-Mestring krever gjennomgått-markering og riktig siste svar på alle oppgaver.
-localStorage inneholder kun status og antall forsøk, uten svartekst eller fasit.
-Se `src/content/README.md` for dataformat, lagring og utvidelse.
-
-Kjør de automatiserte testene uten ekstra testavhengigheter:
-
-```sh
-node --test tests/*.test.js
-npm run build
-npm run lint
-```
-
-Manuell kontroll av oppgavene:
-
-1. Åpne eksempelleksjonen og kontroller at den ikke automatisk er gjennomgått.
-2. Send inn feil og riktig svar på hver oppgave. Forklaring skal vises etter innsending.
-3. Prøv `  courseName  ` som gyldig kodeutfylling, og `course Name` som ugyldig.
-4. Fullfør alle oppgavene riktig og marker leksjonen som gjennomgått.
-5. Oppdater siden: resultat, antall forsøk og mestring skal være bevart.
-6. Send inn et feil svar etter mestring: status skal nå vise at leksjonen ikke er mestret.
-7. Test radioknapper, tekstfelt, innsending og navigasjon på mobil og i begge temaer.
-
-
-De tre eksempeloppgavene er uavhengige: begrepsforståelse med et kalenderkort,
-variabelbruk i `CourseBadge` og feilsøking av nøstede JSX-tagger i `Notice`.
-Oppgavenummer, ferdighet og oppgavetype vises separat fra tittelen.
-Oppgavene kan fortsatt leses og løses i valgfri rekkefølge. Fasit og forklaring
-vises først etter innsending på den aktuelle oppgaven, også når annen
-oppgaveprogresjon allerede er lagret.
-
-
-## Automatiske kursmål
-
-Dashboardet skiller nå mellom React-kursets kursmål og personlige læringsmål.
-Kursmålene viser status, antall beståtte tilknyttede oppgaver og lenke til
-leksjonen. Samlet kursprogresjon viser andelen definerte kursmål som er mestret.
-Leksjonens kursmål vises øverst og oppdateres når oppgaver sendes inn.
-
-Kursmål har stabile ID-er, beskrivelser og `exerciseIds` i kursdata.
-Status beregnes fra eksisterende lagrede oppgaveforsøk og lagres ikke separat.
-«Ikke startet» betyr ingen forsøk, «Under arbeid» betyr at ikke alle tilknyttede
-oppgaver er bestått, og «Mestret» krever at alle er bestått. Mål uten oppgaver
-kan ikke mestres automatisk. Et nytt feil svar kan endre status tilbake til
-«Under arbeid», slik siste-resultat-logikken allerede fungerer.
-
-Personlige mål opprettes, fullføres og slettes som før i TodoContext.
-Kursmål kan ikke markeres som mestret manuelt. Se `src/content/README.md`
-for datastruktur og skillet mellom kursmål og leksjonsmestring.
-
-Kontroller kursmål ved å besvare bare én av oppgavene knyttet til målet om
-funksjonskomponenter. Målet skal være «Under arbeid» til begge er riktige.
-Dashboard og leksjon skal vise samme status, også etter sideoppdatering.
-
-
-## Første komplette React-leksjon
-
-«Hva er en React-komponent?» har sju seksjoner: komponentoppdeling av en
-skoleplattform, første funksjonskomponent, bruk i App, gjenbruk, JSX-regler,
-interaktive oppgaver og oppsummering. Kodeblokker har tilhørende forklaringer,
-et visuelt komponenttre og statiske forhåndsvisninger av nettleserresultatet.
-
-Undervisningen ligger i `src/content/lessons/reactComponentSections.js` og
-kobles til leksjonen fra `reactComponents.js`. `src/components/lesson/` rendrer
-seksjoner og blokker generisk. Studenten kan gå rett til oppgavene fra
-seksjonsmenyen uten å låse opp innhold. Eksisterende oppgave-ID-er, kursmål,
-lagring, navigasjon og de andre leksjonenes innhold er bevart.
-
-Nye tester kontrollerer at alle seksjoner og oppgaver er tilgjengelige,
-at kode og visuelle resultater samsvarer, at undervisningen ikke kopierer
-oppgavefasit, og at leksjoner uten seksjoner fortsatt bruker tidligere visning.
-
-
-## Fra main.jsx til App
-
-Leksjon 2 i `jsx-komponenter` er nå tilgjengelig på sin eksisterende adresse.
-Den har sju seksjoner om prosjektfiler, index.html, main.jsx, App.jsx, import og
-eksport, praktiske oppgaver og oppsummering. De fire oppgavene ligger ved
-forklaringene i seksjon 2, 3, 5 og 6. Fire nye kursmål beregnes automatisk fra
-oppgaveprogresjonen. Målet om import/eksport krever to beståtte oppgaver.
-
-Innholdet er definert i `src/content/lessons/mainToApp.js`. Seksjonsblokker med
-`exerciseIds` velger hvilke oppgaver som vises, og gjenbruker samme motor og
-lagring som før. Tidligere leksjonsdata og progresjon er bevart.
-
-
-## JSX-regler og uttrykk
-
-Leksjon 3 i `jsx-komponenter` ligger på den eksisterende adressen `jsx-regler`.
-Den har sju seksjoner om JSX, uttrykk, attributter, selvavslutning, nøsting,
-kombinasjon med JavaScript og oppsummering. Fem uavhengige oppgaver ligger
-underveis i seksjon 2–6 og oppdaterer seks kursmål fra eksisterende progresjon.
-
-Innholdet ligger i `src/content/lessons/jsxRules.js`. Eksisterende undervisning
-og oppgavemotor gjenbrukes. Forhåndsvisningen kan også vise et statisk,
-tilgjengelig tekstfelt der label og id er koblet sammen. Ingen props, state
-eller hooks er nødvendig for studenten, og de to ferdige leksjonenes innhold
-er beholdt.
+Kursmetadata genereres før build (`npm run content:manifest`). Dashboardet bruker manifestet; undervisningsinnhold lastes dynamisk per modul. Etter vesentlige oppgaveendringer må revisjonen oppdateres, slik at gamle svar bevares uten å gi ny mestring. Se innholdsmodellen for kontrakten.

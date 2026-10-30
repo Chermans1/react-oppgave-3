@@ -70,7 +70,7 @@ export default function LessonView({ lesson, navigation, lessonKey }) {
             <strong>{navigation.next.title}</strong>
           </Link>
         ) : (
-          <p className="muted">Dette er kursets siste planlagte leksjon.</p>
+          <p className="muted">Dette er kursets siste leksjon.</p>
         )}
       </nav>
     </>

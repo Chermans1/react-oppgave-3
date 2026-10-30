@@ -17,6 +17,7 @@ export function sanitizeProgress(value) {
           ).map(([questionId, answer]) => [questionId, {
             attempts: answer.attempts,
             correct: answer.correct,
+            ...(Number.isSafeInteger(answer.revision) && answer.revision > 1 ? { revision: answer.revision } : {}),
           }]),
         ),
       }]),
@@ -37,19 +38,23 @@ export function updateLessonProgress(progress, lessonKey, change) {
   };
 }
 
-export function recordAnswer(progress, lessonKey, questionId, correct) {
+export function recordAnswer(progress, lessonKey, questionId, correct, revision = 1) {
   return updateLessonProgress(progress, lessonKey, (lesson) => ({
     ...lesson,
     answers: {
       ...lesson.answers,
-      [questionId]: { attempts: (lesson.answers[questionId]?.attempts ?? 0) + 1, correct },
+      [questionId]: { attempts: (lesson.answers[questionId]?.attempts ?? 0) + 1, correct, ...(revision > 1 ? { revision } : {}) },
     },
   }));
 }
 
+export function isCurrentAnswer(answer, question) {
+  return Boolean(answer) && (answer.revision ?? 1) === (question.revision ?? 1);
+}
+
 export function getLessonProgress(progress, lessonKey, exercises) {
   const lesson = progress.lessons[lessonKey];
-  const attempts = exercises.map((question) => lesson?.answers[question.id]);
+  const attempts = exercises.map((question) => isCurrentAnswer(lesson?.answers[question.id], question) ? lesson.answers[question.id] : undefined);
   const answered = attempts.filter(Boolean).length;
   const correct = attempts.filter((answer) => answer?.correct).length;
   const reviewed = lesson?.reviewed === true;

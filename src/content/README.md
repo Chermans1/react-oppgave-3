@@ -1,63 +1,80 @@
-# Kursdata
+# Kursdata og vurdering
 
-`courses.js` registrerer kurs og eksporterer funksjoner for oppslag, URL-er,
-leksjonstelling og forrige/neste leksjon. Rekkefølgen i modul- og leksjonsarrayene
-bestemmer progresjonen, også mellom moduler. ID-er er stabile URL-segmenter;
-behold dem når en tittel eller rekkefølge endres.
+React-kurset har 14 moduler og 65 tilgjengelige leksjoner. Ingen leksjoner står
+som `planned`. Modul- og leksjons-ID-er, rekkefølge og URL-er er beholdt.
+JavaScript-grunnlaget kommer først; Tailwind er et valgfritt sidespor.
 
-`reactCourse.js` beskriver de 14 modulene fra kursplanen. Hver modul har `id`,
-`title`, `description` og en ordnet liste med planlagte leksjoner.
-Hvert leksjonspar i `modulePlans` er `[id, title]` og utvides til:
+## Innholdsorganisering
 
-```js
-{
-  id: "jsx-regler",
-  title: "JSX-regler og uttrykk",
-  status: "planned",
-  learningObjectives: [], // { id, description, exerciseIds }
-  content: [],           // forklaringsavsnitt som strenger
-  codeExamples: [],      // { id, title, language, code }
-  exercises: [],         // { id, title, type, instructions }
-}
-```
+- `courses.js`: kursregister via `courseManifest.js`, oppslag, URL-er og forrige/neste leksjon.
+- `loadLesson.js`: dynamisk modulinnlasting, bare for kjent kurs/modul/leksjon.
+- `courseMetadata.js` og `validateCourse.js`: manifestprojeksjon og byggvalidering.
+- `reactCourse.js`: modulrekkefølge, leksjonstitler og registrering. Manglende
+  implementasjon gir en eksplisitt feil fremfor en taus plassholder.
+- `lessons/`: de tre referanseleksjonene med bevarte undervisningsseksjoner.
+- `modules/`: 13 innholdsfiler med de 62 øvrige leksjonene og et register.
+  `components.js` inneholder både fragmentleksjonen og propsmodulen.
+- `lessonBuilder.js`: små forfatterhjelpere for samme eksisterende datamodell.
+  De setter sammen manuelt skrevne temaer, oppgaver og arbeidsoppgaver.
+- `lessonSummaries.js`: korte, faglige oppsummeringer per ny leksjon.
+- `lessonIllustrations.js`: statiske, deklarative illustrasjoner av utvalgte
+  kodeeksempler. Ingen eksempelkode eller studentkode kjøres.
 
-Leksjonen «Hva er en React-komponent?» ligger i `lessons/reactComponents.js`
-og har sju undervisningsseksjoner, læringsmål og tre demonstrasjonsoppgaver.
-Seksjonene ligger i `lessons/reactComponentSections.js`.
-Resten av leksjonene har fortsatt tomme innholdsfelt. `LessonView` viser
-plassholdere der innhold mangler. Kodeeksempler og innsendt kode er kun tekst;
-ingen JavaScript kjøres.
+En ny leksjon beskrives med id, introduksjon, forkunnskaper, temaer,
+praktisk aktivitet og kilder. Hvert tema har en forklaring, kode, forklaring
+av resultatet og et eget spørsmål. Antall temaer kan variere; de nye
+leksjonene har tre eller fire. En tema-id brukes i avledede stabile ID-er:
+`<lessonId>-<topicId>-check` og `<lessonId>-<topicId>-goal`.
+Endre ikke disse id-ene etter at innhold er tatt i bruk. Rekkefølgeendring
+skal aldri kreve nye id-er.
 
-Ved senere innholdsproduksjon kan leksjonsdefinisjonene flyttes til egne filer
-som eksporterer samme objektformat. Sidene trenger da ingen endring.
-Nye kurs legges til i `courses`-arrayet. Statiske kursdata trenger ingen Context;
-Context brukes for tema, brukerens læringsmål og lokal leksjonsprogresjon.
+Kodeblokker merkes som avgrensede utdrag. Filnavn i kommentarer kan angi flere
+filer. JSX-utdrag forutsetter relevante importer og data. Feil kode står i
+feilsøkingsoppgavene med en tydelig instruksjon om å finne feilen.
+`examples/practiceApi.js` gir et kontrollert minne-API med GET, POST, sider og feilscenarioer. Det kopieres til øvingsprosjektet fra fetch-leksjonen; ingen backend kreves. `examples/taskStorage.js` er den testede lagringskontrakten.
+`workshops/` utvider utvalgte leksjoner med sammenhengende filer og kontrollpunkter. `practicalGuides.js` gir konkrete startdata og kontroller til de korte aktivitetene.
+EduPlan får ingen backend. Biblioteker som Query 5, Axios, MSW 2, Vitest,
+Tailwind 4 og TypeScript beskrives for studentens separate øvingsprosjekt.
+De er ikke installert som del av kursimplementeringen.
 
+## Undervisningsblokker
 
-## Oppgavedata
+Seksjoner har `id`, `title`, `stage` og `blocks`. Eksisterende blokker er
+`paragraph`, `list`, `code` (med `notes`), `componentTree`, `preview`,
+`exercises`, `goals` og `progress`. To tillegg brukes av de nye leksjonene:
 
-Alle oppgaver har `id`, `type`, `title`, `prompt` og `explanation`.
-`code` er valgfri tekst. Oppgavene ligger i leksjonens `exercises`-array.
+- `practical`: `activityId` peker til en aktivitet i `practicalActivities`.
+- `resources`: `links` er `{ title, url }` for offisiell videre lesing.
 
-- `MultipleChoiceQuestion` og `FindTheBugQuestion`: `options` er en liste med
-  `{ id, text }`, og `correctAnswer` er ID-en til riktig alternativ.
-- `FillInCodeQuestion`: `validAnswers` inneholder godkjente uttrykk.
-  `whitespace: "trim"` ignorerer mellomrom før og etter svaret, men bevarer
-  interne mellomrom og store/små bokstaver. Valgfri `"collapse"` slår interne
-  whitespace-sekvenser sammen til ett mellomrom; bruk bare dette for uttrykk
-  der det er faglig riktig. Alternative skrivemåter kan listes eksplisitt.
+`LessonSections` tillater direkte navigasjon til alle seksjoner og oppgaver.
+En exercises-blokk bruker `exerciseIds`; hver oppgave plasseres én gang og
+beholder globalt oppgavenummer innen leksjonen.
 
-`ExerciseRenderer` velger komponent ut fra `type`. Felles skjema og
-pedagogisk tilbakemelding ligger i `QuestionFrame`, og flervalg og feilfinning
-bruker de samme radiokontrollene. Et svar teller først ved innsending.
-Nye forsøk oppdaterer resultatet for samme oppgave; de øker ikke antall
-unike besvarte oppgaver. Ingen fasit eller inputverdier lagres i progresjonen.
+`preview` bruker et statisk tillatt elementtre, ikke HTML-strenger eller
+dynamisk kjøring. Inputillustrasjoner er skrivebeskyttet. `id` og `htmlFor`
+får et unikt prefiks per forhåndsvisning. Main vises som div for å unngå
+et ekstra hovedlandemerke inne i appens main.
 
-## Progresjon
+## Oppgaver
 
-`LearningProgressProvider` lagrer under `eduplan.learning-progress.v1` i
-localStorage. Hver leksjon identifiseres av full kurs-/modul-/leksjonssti.
-Skjemaet er versjonert, og ukjente felt filtreres bort ved innlesing.
+Hver oppgave har stabil `id`, `type`, `title`, `prompt`, `explanation` og
+eventuelt `code`.
+
+- Flervalg og feilfinning: `options: [{ id, text }]` og `correctAnswer` som
+  peker til ett alternativ.
+- Kodeutfylling: `validAnswers` og en definert whitespace-regel.
+  `trim` bevarer interne mellomrom; `collapse` brukes bare der det er riktig.
+  `jsx-integer` godtar bare irrelevant whitespace rundt et heltall i {}.
+  `json` normaliserer gyldige JSON-data, uten å endre tekst inne i strenger eller kjøre JavaScript.
+
+Forfatterhjelperne roterer alternativrekkefølgen deterministisk. Løsning og
+forklaring vises bare etter innsending av den aktuelle oppgaven. Et nytt
+forsøk øker forsøksantall og erstatter siste resultat. Oppgavemotoren er
+uendret. Studentkode kjøres aldri med eval eller tilsvarende.
+
+## Progresjon og praktisk vurdering
+
+Lagringsformat og nøkkel er uendret: `eduplan.learning-progress.v1`.
 
 ```js
 {
@@ -73,132 +90,52 @@ Skjemaet er versjonert, og ukjente felt filtreres bort ved innlesing.
 }
 ```
 
-Antall besvarte og riktige oppgaver beregnes fra gjeldende oppgaver i
-leksjonen. Mestring krever eksplisitt gjennomgang og riktig siste innsendte
-svar på alle oppgaver. En tom oppgaveliste gir aldri mestring. Et senere feil
-svar eller fjerning av gjennomgått-markeringen fjerner mestringsstatusen.
-Å åpne en leksjon skriver ingen progresjon. Input og valgt alternativ er
-midlertidige; etter sideoppdatering vises sist lagrede resultat og antall forsøk.
-Ved lagringsfeil beholdes progresjonen i minnet og en melding vises.
+Ingen fasit, svartekst, målstatus eller praktisk godkjenning lagres.
+Et automatisk mål har en ikke-tom `exerciseIds`-liste. Status beregnes av
+`progress/goals.js`: ingen forsøk = ikke startet; noen forsøk uten alle
+bestått = under arbeid; alle bestått = mestret. Siste resultat gjelder.
+Et mål uten oppgaver blir aldri automatisk mestret.
 
+Praktiske mål har `assessment: "practical"` og tom `exerciseIds`.
+Arbeidsoppgaven har oppgavebeskrivelse, forkunnskaper, eventuelt startkode,
+krav/akseptansekriterier og tips. Studenten utfører og kontrollerer den i
+eget prosjekt. Praktisk status vises som «Ikke automatisk vurdert»; den interne statusberegningen er ikke en praktisk gjennomføringsregistrering. Det finnes ingen registrering eller verifisering av praktisk
+utførelse. Det er en uttrykkelig modellbegrensning, ikke en skjult automatisk
+bestått-markering.
 
-## Kursmål og personlige læringsmål
+Dashboard viser alle mål, men prosentberegningen gjelder bare automatisk
+vurderbare, obligatoriske kunnskapsmål. Valgfrie mål har lesson.optional=true og utelates sammen med praktiske mål. 100 prosent vises først når alle obligatoriske mål er mestret. Praktiske mål telles og forklares separat.
+For nye leksjoner heter den automatiske leksjonsindikatoren «Kunnskapsdel
+mestret». Den bruker samme gamle regel: gjennomgått og alle oppgaver riktig.
+De tre opprinnelige leksjonenes undervisning og indikator er beholdt; måltekstene er presisert til det oppgavene faktisk dokumenterer.
+Personlige mål bruker fortsatt TodoContext og er helt adskilt fra kursmål.
 
-Kursmål ligger i leksjonens `learningObjectives` som objekter:
+## Kvalitetskontroll
 
-```js
-{
-  id: "function-component-jsx",
-  description: "Gjenkjenne og arbeide med en enkel funksjonskomponent som returnerer JSX.",
-  exerciseIds: ["component-return", "jsx-closing-tag"]
-}
-```
+Kjør `npm test`. Testene kontrollerer hver modul, globale ID-er, gyldige
+fasiter, plassering av oppgaver, målkoblinger, navigasjonsmål, reload og
+praktiske vurderingsgrenser. Alle leksjoner rendres i en komponenttest;
+fasit skal være skjult før innsending. Nye JS/JSX/TSX-undervisningsutdrag
+parses med Vites eksisterende Oxc-transformer uten å kjøre koden.
+Kontekstuelle return-, case- og JSX-utdrag får bare en parserinnramming i
+selve testen. CSS, HTML, shell og bevisst feil oppgavekode er ikke omfattet
+av JavaScript-parseren. Dette er syntakskontroll, ikke full typekontroll
+eller en bekreftelse på at alle API-er og biblioteker er satt opp hos studenten.
 
-ID-en er stabil innenfor leksjonen. Oppgave-ID-ene viser til oppgaver i samme
-leksjon; samme oppgave kan være knyttet til flere mål. En tom `exerciseIds`-liste
-er tillatt, men kan ikke gi mestring. De andre leksjonene beholder tomme
-mål-lister frem til innholdet utarbeides.
+## Revisjoner og dynamisk innhold
 
-Status er ikke et felt som lagres i kursdata eller localStorage.
-`src/progress/goals.js` beregner den fra eksisterende oppgaveforsøk:
+Kjør `npm run content:manifest` etter innholdsendringer. `prebuild` gjør dette automatisk. Manifestet inneholder titler, id-er, mål og oppgaverevisjoner, men ingen fasit eller undervisningsblokker. Tester oppdager avvik. Ikke rediger genererte filer for hånd. Eksempelkilde lagres som bokstavelig tekst, slik at minifisering ikke endrer koden studenten leser.
 
-- `not-started` / Ikke startet: ingen tilknyttede oppgaver er forsøkt.
-- `in-progress` / Under arbeid: noen er forsøkt, men ikke alle er bestått.
-- `mastered` / Mestret: alle tilknyttede oppgaver har riktig siste innsendte svar.
+En oppgave uten revision regnes som revisjon 1. Av de 190 reviderte oppgavene bruker 186 revision: 2. De fire oppgavene children-slot-check, children-responsibility-check, children-render-check og klient-server-provider-check bruker revision: 3 etter endret vurderingsgrunnlag. Lagret `answers[id]` kan nå ha `{ attempts, correct, revision: 2 }`; nøkkelen og v1-formatet er beholdt. Eldre resultat vises som historikk, men teller først igjen etter et svar på gjeldende revisjon. Øk revision ved vesentlige endringer i ferdighet, fasit eller vurderingsgrunnlag. Bruk eksisterende id når ferdigheten fortsatt er den samme.
 
-Mål uten oppgaver blir «Ikke startet», med beskjed om at mestring ikke kan
-vurderes. Ukjente oppgave-ID-er kan heller ikke gi mestring. Dashboardets
-samlede progresjon er antall mestrede mål delt på antall definerte kursmål,
-inkludert mål som foreløpig mangler oppgaver. Det gjelder dagens definerte mål,
-ikke planlagte fremtidige mål i alle leksjoner.
+De 62 praktiske aktivitetene har `startpoint`, `criteria`, `checks` og `extensions`. Minimum og fordypning skal fremgå hver for seg. De får aldri oppgavekoblinger som automatisk godkjenner programmeringen.
 
-Dashboard og leksjonsvisning bruker samme beregning og den delte komponenten
-`CourseGoalList`. Kursmål kan ikke krysses av manuelt og trenger ingen ny
-lagringsnøkkel. De holdes adskilt fra TodoContext og personlige mål.
+Se [kvalitetsrapporten](../../docs/react-course-quality-improvements.md) og [oppgaveoversikten](../../docs/react-course-review-ledger.md).
 
-Kursmål krever ikke at studenten krysser av «gjennomgått». Den eksisterende
-statusen for hele leksjonen krever fortsatt både gjennomgått og riktige svar
-på alle leksjonens oppgaver. Dette er to ulike vurderinger.
+## Beskyttelse ved lagringsfeil
 
+`progress/storage.js` skiller manglende nøkkel fra mislykket lesing av rådata og feil datamodell. Provideren sperrer videre automatisk skriving ved både lese- og skrivefeil. Nye svar beholdes i minnet. `storageBlocked` og feilmeldinger er bare øktstilstand; de lagres ikke som en ny progresjonsmodell.
 
-## Seksjonsbasert undervisning
+`ProgressStorageNotice` tilbyr uttrykkelig ny lesing (som erstatter øktens arbeid med gyldige lagrede data), eller erstatning av lagringen med øktens progresjon etter bekreftelse. Mislykket ny lesing beholder minnet. Bare eksisterende progresjonsnøkkel skrives. Gyldig v1 og tidligere oppgaverevisjoner støttes fortsatt.
 
-Leksjoner kan ha en valgfri `sections`-liste. Hver seksjon har stabil `id`,
-`title`, `stage` og en ordnet liste `blocks`. Leksjoner uten seksjoner bruker
-fortsatt eksisterende `content` og `codeExamples`; de andre leksjonenes data er
-ikke endret. De to formatene rendres ikke samtidig.
-
-```js
-{
-  id: "forste-komponent",
-  title: "Din første React-komponent",
-  stage: "Forklaring",
-  blocks: [
-    { type: "paragraph", text: "En kort forklaring." },
-    {
-      type: "code", title: "Kodeeksempel", language: "jsx", code: "...",
-      notes: [{ term: "return", text: "Forklaring knyttet til koden." }]
-    },
-    { type: "preview", caption: "Resultatet", nodes: [{ tag: "h1", text: "Hei!" }] }
-  ]
-}
-```
-
-Støttede blokker er `paragraph`, `list` (`items`), `code` (med valgfrie `notes`),
-`componentTree` (`caption`, `root` med `name`, `description`, `children`),
-`preview` (`caption`, `nodes`), `exercises`, `goals` og `progress`.
-
-`LessonSections` tilbyr fri navigasjon som flytter fokus til seksjonen, uten å
-endre HashRouter-adressen eller registrere mestring. Alle seksjoner og oppgaver
-rendres med en gang. `TeachingSection` og `TeachingBlock` viser innholdet.
-`exercises` gjenbruker den eksisterende oppgavemotoren og leksjonens oppgavedata.
-`goals` og `progress` bruker eksisterende beregning og Context.
-
-Visuelle forhåndsvisninger er deklarative, statiske elementtrær. Hver node har
-`tag`, valgfri `text` og valgfrie `children`. Bare godkjente elementtyper vises,
-og kildeteksten evalueres aldri. En demonstrert `main` vises som en div for å
-unngå et ekstra main-landemerke inne i appens hovedinnhold. Foreløpig støttes
-h1, h2, p, span, article, main, section, div, label og input. Forhåndsvisningene skal vedlikeholdes sammen
-med kodeeksemplene; tester kontrollerer innholdet i de første eksemplene.
-
-
-## Leksjon 2: Fra main.jsx til App
-
-`lessons/mainToApp.js` inneholder leksjonen med eksisterende ID `fra-main-til-app`.
-Den registreres sammen med komponentleksjonen i `reactCourse.js`.
-Fire nye kursmål kobles til fire egne oppgave-ID-er; det eksisterende
-localStorage-formatet og tidligere leksjonsprogresjon endres ikke.
-
-Oppgaver kan fordeles gjennom en leksjon med en valgfri `exerciseIds`-liste
-på `exercises`-blokken:
-
-```js
-{ type: "exercises", exerciseIds: ["html-entry-role"] }
-```
-
-Uten listen vises alle leksjonens oppgaver som før. Med listen vises bare de
-valgte oppgavene. Nummereringen følger alltid leksjonens globale oppgaveliste,
-slik at oppgavene beholder nummer 1–4 selv om de vises i forskjellige seksjoner.
-Hver oppgave skal plasseres én gang. Progresjon og mestring beregnes fortsatt
-fra hele leksjonens oppgaveliste, ikke fra seksjonens utvalg.
-
-Leksjonen bruker bare standardeksport for egne komponenter, og introduserer
-ikke props, state eller hooks. `createRoot` importeres fra biblioteket med
-bibliotekets ordinære importform. StrictMode nevnes kun kort.
-
-
-## Leksjon 3: JSX-regler og uttrykk
-
-`lessons/jsxRules.js` definerer leksjonen med eksisterende ID `jsx-regler`.
-Den har sju seksjoner, seks kursmål og fem oppgaver, én i hver av seksjonene
-2–6. Oppgavene tester resultatforståelse, attributter, selvavslutning, struktur
-og kombinasjon av JavaScript og JSX. Oppgavelistens ID-er brukes både i
-seksjonsplassering og i målenes `exerciseIds`.
-
-Forhåndsvisninger støtter nå også `section`, `div`, `label` og `input`.
-En label kan ha `htmlFor`, et felt kan ha `id` og `placeholder`, og noder kan
-ha `className` for forhåndsvisningens CSS. ID-er får et unikt prefiks per
-forhåndsvisning; labelen får samme prefiks, slik at koblingen bevares uten
-ID-kollisjoner. Tekstfelt er alltid skrivebeskyttede i forhåndsvisningen.
-Bare de eksplisitt støttede egenskapene brukes; kode og event-handlere fra
-data kjøres ikke. Kursdataene i de to tidligere leksjonene er uendret.
+Lagringseksemplet mottar en funksjon som henter `window.localStorage` inne i try/catch. Query-workshopen viser den faktiske testede `examples/LessonQueryResult.jsx` som bokstavelig kildekode; den håndterer undefined-data, pause, lasting, feil, tomt svar og data.

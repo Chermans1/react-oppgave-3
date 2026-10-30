@@ -1,55 +1,40 @@
 import { useRef, useState } from "react";
 import { LearningProgressContext } from "./LearningProgressContext.js";
-import {
-  emptyProgress,
-  PROGRESS_KEY,
-  readProgress,
-  recordAnswer,
-  updateLessonProgress,
-} from "../progress/progress.js";
+import { recordAnswer, updateLessonProgress } from "../progress/progress.js";
+import { changeProgressSession, loadProgressSession, recoverProgressSession, saveProgressSession } from "../progress/storage.js";
 
-function loadProgress() {
-  try {
-    return { progress: readProgress(window.localStorage), storageError: "" };
-  } catch {
-    return {
-      progress: emptyProgress(),
-      storageError: "Lagret progresjon kunne ikke leses. Du kan fortsatt øve i denne økten.",
-    };
+const browserStorage = () => window.localStorage;
+
+export default function LearningProgressProvider({ children, getStorage = browserStorage }) {
+  const [state, setState] = useState(() => loadProgressSession(getStorage));
+  const sessionRef = useRef(state);
+
+  function applySession(next) {
+    sessionRef.current = next;
+    setState(next);
   }
-}
-
-export default function LearningProgressProvider({ children }) {
-  const [state, setState] = useState(loadProgress);
-  // Keep consecutive actions in sync without side effects inside a state updater.
-  const progressRef = useRef(state.progress);
 
   function updateProgress(change) {
-    const progress = change(progressRef.current);
-    progressRef.current = progress;
-    let storageError = "";
-    try {
-      window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
-    } catch {
-      storageError = "Progresjonen kunne ikke lagres på enheten. Den beholdes bare i denne økten.";
-    }
-    setState({ progress, storageError });
+    applySession(changeProgressSession(sessionRef.current, change, getStorage));
   }
 
   function setReviewed(lessonKey, reviewed) {
-    updateProgress((progress) => updateLessonProgress(progress, lessonKey, (lesson) => ({
-      ...lesson,
-      reviewed,
-    })));
+    updateProgress((progress) => updateLessonProgress(progress, lessonKey, (lesson) => ({ ...lesson, reviewed })));
   }
 
-  function submitAnswer(lessonKey, questionId, correct) {
-    updateProgress((progress) => recordAnswer(progress, lessonKey, questionId, correct));
+  function submitAnswer(lessonKey, questionId, correct, revision = 1) {
+    updateProgress((progress) => recordAnswer(progress, lessonKey, questionId, correct, revision));
   }
 
-  return (
-    <LearningProgressContext.Provider value={{ ...state, setReviewed, submitAnswer }}>
-      {children}
-    </LearningProgressContext.Provider>
-  );
+  function recoverStoredProgress() {
+    applySession(recoverProgressSession(sessionRef.current, getStorage));
+  }
+
+  function replaceStoredProgress() {
+    applySession(saveProgressSession(sessionRef.current, getStorage));
+  }
+
+  return <LearningProgressContext.Provider value={{ ...state, setReviewed, submitAnswer, recoverStoredProgress, replaceStoredProgress }}>
+    {children}
+  </LearningProgressContext.Provider>;
 }

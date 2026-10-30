@@ -6,7 +6,7 @@ export default function CourseCard({ course }) {
     <article className="course-card">
       <div className="course-card-top">
         <span className="course-icon" aria-hidden="true">⌘</span>
-        <span className="status-badge">Under utvikling</span>
+        <span className="status-badge">{course.status === "available" ? "Tilgjengelig" : "Under utvikling"}</span>
       </div>
       <h2><Link to={coursePath(course.id)}>{course.title}</Link></h2>
       <p>{course.description}</p>

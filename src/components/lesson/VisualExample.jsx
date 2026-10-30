@@ -3,7 +3,7 @@ import { createElement, useId } from "react";
 // Static, allowlisted data only. Never evaluate source code or student input.
 // A demonstrated main uses a div to avoid a nested main landmark in the app.
 const previewTags = {
-  h1: "h1", h2: "h2", p: "p", span: "span", article: "article", main: "div",
+  h1: "h1", h2: "h2", h3: "h3", h4: "h4", p: "p", span: "span", article: "article", main: "div",
   section: "section", div: "div", label: "label", input: "input",
 };
 
@@ -21,13 +21,13 @@ function PreviewNode({ node, idPrefix }) {
   );
 }
 
-export default function VisualExample({ caption, nodes }) {
+export default function VisualExample({ caption, nodes, label = "Nettleserresultat" }) {
   const idPrefix = useId();
   return (
     <figure className="visual-example">
       <figcaption>{caption}</figcaption>
       <div className="preview-window">
-        <div className="preview-toolbar" aria-hidden="true"><span /> <span /> <span /> <small>Nettleserresultat</small></div>
+        <div className="preview-toolbar" aria-hidden="true"><span /> <span /> <span /> <small>{label}</small></div>
         <div className="preview-content">{nodes.map((node, index) => <PreviewNode key={index} node={node} idPrefix={idPrefix} />)}</div>
       </div>
     </figure>

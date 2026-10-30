@@ -15,7 +15,7 @@ export default function CourseDetails() {
     <>
       <Breadcrumbs items={[{ label: course.title }]} />
       <header className="intro">
-        <span className="eyebrow">KURSPLAN · UNDER UTVIKLING</span>
+        <span className="eyebrow">{course.status === "available" ? "KURS · UNDERVISNINGSINNHOLD" : "KURSPLAN · UNDER UTVIKLING"}</span>
         <h1>{course.title}</h1>
         <p>{course.description}</p>
       </header>
@@ -27,9 +27,9 @@ export default function CourseDetails() {
       <p className="notice">
         {firstAvailable ? (
           <>
-            Prøv en leksjon: <Link to={lessonPath(course.id, firstAvailable.module.id, firstAvailable.lesson.id)}>
+            {course.status === "available" ? "Start kurset:" : "Prøv en leksjon:"} <Link to={lessonPath(course.id, firstAvailable.module.id, firstAvailable.lesson.id)}>
               {firstAvailable.lesson.title}
-            </Link>. Flere leksjoner kommer etter hvert.
+            </Link>. {course.status === "available" ? "Alle leksjonene har undervisning og oppgaver. Praktiske arbeidsoppgaver gjennomføres i eget prosjekt." : "Flere leksjoner kommer etter hvert."}
           </>
         ) : "Kursstrukturen er klar. Undervisningsinnhold og oppgaver kommer senere."}
       </p>

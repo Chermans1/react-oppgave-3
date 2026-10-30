@@ -1140,3 +1140,17 @@ a {
   color: var(--text);
   font-size: 16px;
 }
+
+.practical-activity {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  min-width: 0;
+}
+.practical-activity h4 { margin-bottom: 0.5rem; }
+.practical-activity li + li, .lesson-resources li + li { margin-top: 0.5rem; }
+.lesson-resources a { overflow-wrap: anywhere; }
+
+/* Keep wrapped module titles clickable between their text lines as well. */
+.module-list h3 a { display: block; }

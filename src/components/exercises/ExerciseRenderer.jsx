@@ -15,7 +15,7 @@ export default function ExerciseRenderer({ question, number, lessonKey }) {
       question={question}
       number={number}
       attempt={progress.lessons[lessonKey]?.answers[question.id]}
-      onAnswer={(correct) => submitAnswer(lessonKey, question.id, correct)}
+      onAnswer={(correct) => submitAnswer(lessonKey, question.id, correct, question.revision ?? 1)}
     />
   );
 }
