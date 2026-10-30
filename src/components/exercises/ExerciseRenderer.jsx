@@ -6,7 +6,7 @@ import FindTheBugQuestion from "./FindTheBugQuestion.jsx";
 const questionTypes = { MultipleChoiceQuestion, FillInCodeQuestion, FindTheBugQuestion };
 
 export default function ExerciseRenderer({ question, number, lessonKey }) {
-  const { progress, submitAnswer } = useLearningProgress();
+  const { progress, submitAnswer, revealSolution, startNewPracticeRound } = useLearningProgress();
   const Component = questionTypes[question.type];
   if (!Component) return <p className="notice">Denne oppgavetypen støttes ikke ennå.</p>;
 
@@ -15,7 +15,9 @@ export default function ExerciseRenderer({ question, number, lessonKey }) {
       question={question}
       number={number}
       attempt={progress.lessons[lessonKey]?.answers[question.id]}
-      onAnswer={(correct) => submitAnswer(lessonKey, question.id, correct, question.revision ?? 1)}
+      onAnswer={(correct, assisted) => submitAnswer(lessonKey, question.id, correct, question.revision ?? 1, assisted)}
+      onRevealSolution={() => revealSolution(lessonKey, question.id, question.revision ?? 1)}
+      onStartNewRound={() => startNewPracticeRound(lessonKey, question.id, question.revision ?? 1)}
     />
   );
 }

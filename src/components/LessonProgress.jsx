@@ -24,7 +24,7 @@ export default function LessonProgress({ lesson, lessonKey, nested = false }) {
       ) : <p className="muted">Leksjonen kan markeres som gjennomgått når innholdet er klart.</p>}
       <p className="muted">
         {summary.total
-          ? "Mestring krever at leksjonen er gjennomgått og siste innsendte svar på hver oppgave er riktig. Du kan prøve flere ganger."
+          ? "Mestring krever at leksjonen er gjennomgått og siste innsendte svar på hver oppgave er riktig og gitt uten at du har sett fasiten. Du kan prøve flere ganger."
           : "Mestring vurderes først når leksjonen har oppgaver."}
       </p>
       {hasPracticalWork && <p className="notice">Automatisk mestring gjelder kun kunnskapsoppgavene. Praktiske mål og arbeidsoppgaver må gjennomføres i eget prosjekt; denne modellen registrerer ikke praktisk gjennomføring.</p>}

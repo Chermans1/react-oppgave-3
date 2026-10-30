@@ -36,9 +36,10 @@ test("a goal needs all linked tasks to pass, including after a failed attempt", 
   assert.equal(status(progress).passed, 1);
   progress = recordAnswer(progress, key, goal.exerciseIds[1], true);
   assert.equal(status(progress).status, "mastered");
-  // Latest-result semantics are inherited; mastery is not a second persisted flag.
+  // Documented mastery is kept when a later practice attempt is wrong; the goal status itself is never stored.
   progress = recordAnswer(progress, key, goal.exerciseIds[1], false);
-  assert.equal(status(progress).status, "in-progress");
+  assert.equal(status(progress).status, "mastered");
+  assert.equal(JSON.stringify(progress).includes("in-progress"), false);
 });
 
 test("unrelated attempts and review do not start goals; task success does not require review", () => {

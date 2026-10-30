@@ -1,4 +1,4 @@
-import { isCurrentAnswer } from "./progress.js";
+import { isCurrentAnswer, isMastered } from "./progress.js";
 import { lessonPath } from "../content/courses.js";
 
 export const GOAL_STATUS_LABELS = {
@@ -7,7 +7,7 @@ export const GOAL_STATUS_LABELS = {
   mastered: "Mestret",
 };
 
-// Goal status is always derived from the existing, latest submitted answers.
+// Goal status is always derived from the stored answers: documented mastery of the current revision.
 export function getGoalProgress(progress, lessonKey, goal, exercises) {
   const questionIds = [...new Set(goal.exerciseIds)];
   const available = new Map(exercises.map((exercise) => [exercise.id, exercise]));
@@ -16,7 +16,7 @@ export function getGoalProgress(progress, lessonKey, goal, exercises) {
       ? progress.lessons[lessonKey]?.answers[id] : undefined,
   );
   const attempted = answers.filter((answer) => answer?.attempts > 0).length;
-  const passed = answers.filter((answer) => answer?.attempts > 0 && answer.correct === true).length;
+  const passed = answers.filter((answer) => answer?.attempts > 0 && isMastered(answer)).length;
   const total = questionIds.length;
   const status = total > 0 && passed === total
     ? "mastered"

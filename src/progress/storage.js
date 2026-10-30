@@ -10,6 +10,9 @@ export function validStoredProgress(value) {
       Object.values(lesson.answers).every((answer) =>
         isRecord(answer) && Number.isSafeInteger(answer.attempts) && answer.attempts > 0 &&
         typeof answer.correct === "boolean" &&
+        (answer.assisted === undefined || typeof answer.assisted === "boolean") &&
+        (answer.mastered === undefined || typeof answer.mastered === "boolean") &&
+        (answer.solutionShown === undefined || typeof answer.solutionShown === "boolean") &&
         (answer.revision === undefined || (Number.isSafeInteger(answer.revision) && answer.revision >= 1))));
 }
 

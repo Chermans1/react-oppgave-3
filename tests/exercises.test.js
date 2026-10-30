@@ -57,11 +57,10 @@ test("mastery needs explicit review and a correct latest answer for every exerci
   assert.equal(summary(progress).mastered, true);
   progress = recordAnswer(progress, lessonKey, exercises[0].id, false);
   assert.equal(summary(progress).answered, 3);
-  assert.equal(summary(progress).correct, 2);
-  assert.equal(summary(progress).mastered, false);
-  assert.equal(progress.lessons[lessonKey].answers[exercises[0].id].attempts, 2);
-  progress = recordAnswer(progress, lessonKey, exercises[0].id, true);
+  assert.equal(summary(progress).correct, 3, "earlier documented mastery is kept after a later wrong practice attempt");
   assert.equal(summary(progress).mastered, true);
+  assert.equal(progress.lessons[lessonKey].answers[exercises[0].id].attempts, 2);
+  assert.equal(progress.lessons[lessonKey].answers[exercises[0].id].correct, false, "the latest practice result is still recorded");
 });
 
 test("review alone and a lesson with no exercises never grant mastery", () => {

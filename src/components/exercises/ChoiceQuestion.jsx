@@ -2,8 +2,8 @@ import { useId } from "react";
 import { useQuestionAttempt } from "../../hooks/useQuestionAttempt.js";
 import QuestionFrame from "./QuestionFrame.jsx";
 
-export default function ChoiceQuestion({ question, number, attempt, onAnswer }) {
-  const state = useQuestionAttempt(question, onAnswer);
+export default function ChoiceQuestion({ question, number, attempt, onAnswer, onRevealSolution, onStartNewRound }) {
+  const state = useQuestionAttempt(question, onAnswer, { attempt, onRevealSolution, onStartNewRound });
   const groupId = useId();
   return (
     <QuestionFrame question={question} number={number} attempt={attempt} state={state}>

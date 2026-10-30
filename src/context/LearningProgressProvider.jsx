@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { LearningProgressContext } from "./LearningProgressContext.js";
-import { recordAnswer, updateLessonProgress } from "../progress/progress.js";
+import { markSolutionShown, recordAnswer, startPracticeRound, updateLessonProgress } from "../progress/progress.js";
 import { changeProgressSession, loadProgressSession, recoverProgressSession, saveProgressSession } from "../progress/storage.js";
 
 const browserStorage = () => window.localStorage;
@@ -22,8 +22,16 @@ export default function LearningProgressProvider({ children, getStorage = browse
     updateProgress((progress) => updateLessonProgress(progress, lessonKey, (lesson) => ({ ...lesson, reviewed })));
   }
 
-  function submitAnswer(lessonKey, questionId, correct, revision = 1) {
-    updateProgress((progress) => recordAnswer(progress, lessonKey, questionId, correct, revision));
+  function submitAnswer(lessonKey, questionId, correct, revision = 1, assisted = false) {
+    updateProgress((progress) => recordAnswer(progress, lessonKey, questionId, correct, revision, assisted));
+  }
+
+  function revealSolution(lessonKey, questionId, revision = 1) {
+    updateProgress((progress) => markSolutionShown(progress, lessonKey, questionId, revision));
+  }
+
+  function startNewPracticeRound(lessonKey, questionId, revision = 1) {
+    updateProgress((progress) => startPracticeRound(progress, lessonKey, questionId, revision));
   }
 
   function recoverStoredProgress() {
@@ -34,7 +42,7 @@ export default function LearningProgressProvider({ children, getStorage = browse
     applySession(saveProgressSession(sessionRef.current, getStorage));
   }
 
-  return <LearningProgressContext.Provider value={{ ...state, setReviewed, submitAnswer, recoverStoredProgress, replaceStoredProgress }}>
+  return <LearningProgressContext.Provider value={{ ...state, setReviewed, submitAnswer, revealSolution, startNewPracticeRound, recoverStoredProgress, replaceStoredProgress }}>
     {children}
   </LearningProgressContext.Provider>;
 }

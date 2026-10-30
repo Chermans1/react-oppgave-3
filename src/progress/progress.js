@@ -17,6 +17,9 @@ export function sanitizeProgress(value) {
           ).map(([questionId, answer]) => [questionId, {
             attempts: answer.attempts,
             correct: answer.correct,
+            ...(answer.assisted === true ? { assisted: true } : {}),
+            ...(answer.mastered === true ? { mastered: true } : {}),
+            ...(answer.solutionShown === true ? { solutionShown: true } : {}),
             ...(Number.isSafeInteger(answer.revision) && answer.revision > 1 ? { revision: answer.revision } : {}),
           }]),
         ),
@@ -38,13 +41,57 @@ export function updateLessonProgress(progress, lessonKey, change) {
   };
 }
 
-export function recordAnswer(progress, lessonKey, questionId, correct, revision = 1) {
+// An answer record holds the latest practice result (correct, assisted) and, separately, the documented
+// mastery of that revision. A correct answer given after the solution was shown (assisted) is practice, not mastery.
+// `mastered` is only stored when the latest result alone cannot show it (a later wrong or assisted answer);
+// legacy records without the field are read as before: correct and not assisted means mastered.
+// `solutionShown` marks that the current practice round has seen the solution. It lives until a deliberate new round.
+export const isIndependentCorrect = (answer) => answer?.correct === true && answer.assisted !== true;
+export const isMastered = (answer) => answer?.mastered === true || isIndependentCorrect(answer);
+export const isSolutionShown = (answer, question) => isCurrentAnswer(answer, question) && answer.solutionShown === true;
+
+const sameRevision = (answer, revision) => (answer?.revision ?? 1) === revision;
+
+export function recordAnswer(progress, lessonKey, questionId, correct, revision = 1, assisted = false) {
+  return updateLessonProgress(progress, lessonKey, (lesson) => {
+    const previous = lesson.answers[questionId];
+    const current = previous && sameRevision(previous, revision) ? previous : undefined;
+    const solutionShown = current?.solutionShown === true;
+    const isAssisted = correct && (assisted || solutionShown);
+    const independent = correct && !isAssisted;
+    const keepsMastery = !independent && isMastered(current);
+    return {
+      ...lesson,
+      answers: {
+        ...lesson.answers,
+        [questionId]: {
+          attempts: (previous?.attempts ?? 0) + 1,
+          correct,
+          ...(isAssisted ? { assisted: true } : {}),
+          ...(keepsMastery ? { mastered: true } : {}),
+          ...(solutionShown ? { solutionShown: true } : {}),
+          ...(revision > 1 ? { revision } : {}),
+        },
+      },
+    };
+  });
+}
+
+// Persist that the student chose to see the solution for this revision. Needs an existing answer to attach to.
+export function markSolutionShown(progress, lessonKey, questionId, revision = 1) {
+  const answer = progress.lessons[lessonKey]?.answers[questionId];
+  if (!answer || !sameRevision(answer, revision) || answer.solutionShown === true) return progress;
   return updateLessonProgress(progress, lessonKey, (lesson) => ({
-    ...lesson,
-    answers: {
-      ...lesson.answers,
-      [questionId]: { attempts: (lesson.answers[questionId]?.attempts ?? 0) + 1, correct, ...(revision > 1 ? { revision } : {}) },
-    },
+    ...lesson, answers: { ...lesson.answers, [questionId]: { ...answer, solutionShown: true } },
+  }));
+}
+
+// A deliberate new practice round. History (attempts, latest result, mastery) is kept.
+export function startPracticeRound(progress, lessonKey, questionId, revision = 1) {
+  const answer = progress.lessons[lessonKey]?.answers[questionId];
+  if (!answer || !sameRevision(answer, revision) || answer.solutionShown !== true) return progress;
+  return updateLessonProgress(progress, lessonKey, (lesson) => ({
+    ...lesson, answers: { ...lesson.answers, [questionId]: Object.fromEntries(Object.entries(answer).filter(([field]) => field !== "solutionShown")) },
   }));
 }
 
@@ -56,7 +103,7 @@ export function getLessonProgress(progress, lessonKey, exercises) {
   const lesson = progress.lessons[lessonKey];
   const attempts = exercises.map((question) => isCurrentAnswer(lesson?.answers[question.id], question) ? lesson.answers[question.id] : undefined);
   const answered = attempts.filter(Boolean).length;
-  const correct = attempts.filter((answer) => answer?.correct).length;
+  const correct = attempts.filter(isMastered).length;
   const reviewed = lesson?.reviewed === true;
   return {
     reviewed,

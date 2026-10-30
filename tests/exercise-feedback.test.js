@@ -74,8 +74,9 @@ test("only the submitted question renders its own feedback, for both outcomes", 
   for (const active of questions) {
     for (const correct of [false, true]) {
       const html = questions.map((question) => renderQuestion(question, question === active ? { correct } : null)).join("");
-      assert.equal(html.split("Riktig svar:").length - 1, 1);
-      assert.equal(html.includes(escaped(active.explanation)), true);
+      // A wrong answer shows a hint only; the solution and explanation wait for a correct answer or an explicit choice.
+      assert.equal(html.split("Riktig svar:").length - 1, correct ? 1 : 0);
+      assert.equal(html.includes(escaped(active.explanation)), correct);
       assert.equal(html.includes(correct ? "Riktig!" : "Ikke helt riktig ennå."), true);
       assert.match(html, /Endre svaret for å prøve igjen/);
       for (const other of questions.filter((question) => question !== active)) {
@@ -279,16 +280,19 @@ test("practical work stays unassessed in dashboard and lesson even with all know
   assert.equal(lessonMarkup.includes("Leksjon mestret"), false);
 });
 
-test("all course questions show explanation only after their own submitted result", () => {
+test("all course questions show solution and explanation only after a correct answer", () => {
   for (const module of reactCourse.modules) for (const lesson of module.lessons) for (const question of lesson.exercises) {
     const unanswered = renderQuestion(question, null, { correct: true, attempts: 1 });
     assert.equal(unanswered.includes(escaped(question.explanation)), false, question.id);
-    for (const correct of [false, true]) {
-      const submitted = renderQuestion(question, { correct });
-      assert.ok(submitted.includes(escaped(question.explanation)), question.id);
-      assert.ok(submitted.includes(correct ? "Riktig!" : "Ikke helt riktig ennå."));
-      assert.match(submitted, /Endre svaret for å prøve igjen/);
-    }
+    const wrong = renderQuestion(question, { correct: false });
+    assert.ok(wrong.includes("Ikke helt riktig ennå."));
+    assert.equal(wrong.includes("Riktig svar:"), false, question.id);
+    assert.equal(wrong.includes(escaped(question.explanation)), false, question.id);
+    assert.match(wrong, /Endre svaret for å prøve igjen/);
+    const right = renderQuestion(question, { correct: true });
+    assert.ok(right.includes("Riktig!"));
+    assert.ok(right.includes(escaped(question.explanation)), question.id);
+    assert.ok(right.includes("Riktig svar:"));
   }
 });
 
