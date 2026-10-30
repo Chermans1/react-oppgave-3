@@ -187,3 +187,16 @@ lagring, navigasjon og de andre leksjonenes innhold er bevart.
 Nye tester kontrollerer at alle seksjoner og oppgaver er tilgjengelige,
 at kode og visuelle resultater samsvarer, at undervisningen ikke kopierer
 oppgavefasit, og at leksjoner uten seksjoner fortsatt bruker tidligere visning.
+
+
+## Fra main.jsx til App
+
+Leksjon 2 i `jsx-komponenter` er nå tilgjengelig på sin eksisterende adresse.
+Den har sju seksjoner om prosjektfiler, index.html, main.jsx, App.jsx, import og
+eksport, praktiske oppgaver og oppsummering. De fire oppgavene ligger ved
+forklaringene i seksjon 2, 3, 5 og 6. Fire nye kursmål beregnes automatisk fra
+oppgaveprogresjonen. Målet om import/eksport krever to beståtte oppgaver.
+
+Innholdet er definert i `src/content/lessons/mainToApp.js`. Seksjonsblokker med
+`exerciseIds` velger hvilke oppgaver som vises, og gjenbruker samme motor og
+lagring som før. Tidligere leksjonsdata og progresjon er bevart.

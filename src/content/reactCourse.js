@@ -1,3 +1,4 @@
+import { mainToAppLesson } from "./lessons/mainToApp.js";
 import { reactComponentsLesson } from "./lessons/reactComponents.js";
 
 // Stable IDs keep links valid when titles or the order of modules change.
@@ -18,9 +19,9 @@ const modulePlans = [
     title: "JSX og komponenter",
     description: "Forstå hvordan React bygger en visning av små komponenter.",
     lessons: [
+      ["funksjonskomponenter", "Hva er en React-komponent?"],
       ["fra-main-til-app", "Fra main.jsx til App"],
       ["jsx-regler", "JSX-regler og uttrykk"],
-      ["funksjonskomponenter", "Hva er en React-komponent?"],
       ["fragmenter-komponenttraer", "Fragmenter og komponenttrær"],
     ],
   },
@@ -167,6 +168,11 @@ const modulePlans = [
   },
 ];
 
+const implementedLessons = {
+  [reactComponentsLesson.id]: reactComponentsLesson,
+  [mainToAppLesson.id]: mainToAppLesson,
+};
+
 export const reactCourse = {
   id: "react",
   title: "React – fra grunnlag til læringsplattform",
@@ -175,8 +181,8 @@ export const reactCourse = {
   modules: modulePlans.map((module) => ({
     ...module,
     lessons: module.lessons.map(([id, title]) =>
-      module.id === "jsx-komponenter" && id === reactComponentsLesson.id
-        ? reactComponentsLesson
+      module.id === "jsx-komponenter" && implementedLessons[id]
+        ? implementedLessons[id]
         : {
             id,
             title,

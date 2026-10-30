@@ -70,8 +70,8 @@ test("reloading preserves derived course statuses without persisting goals", () 
   for (const question of lesson.exercises) progress = recordAnswer(progress, key, question.id, true);
   const serialized = JSON.stringify(progress);
   const restored = readProgress({ getItem: (storageKey) => storageKey === PROGRESS_KEY ? serialized : null });
-  const goals = getCourseGoals(courses[0], restored);
-  assert.deepEqual(goals, getCourseGoals(courses[0], progress));
+  const goals = getCourseGoals(courses[0], restored).filter((item) => item.lessonKey === key);
+  assert.deepEqual(goals, getCourseGoals(courses[0], progress).filter((item) => item.lessonKey === key));
   assert.deepEqual(summarizeGoals(goals), { total: 4, mastered: 4, percentage: 100 });
   assert.equal(serialized.includes('"status"'), false);
   for (const objective of lesson.learningObjectives) assert.equal(serialized.includes(objective.id), false);

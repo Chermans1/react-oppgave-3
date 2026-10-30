@@ -160,3 +160,28 @@ og kildeteksten evalueres aldri. En demonstrert `main` vises som en div for å
 unngå et ekstra main-landemerke inne i appens hovedinnhold. Foreløpig støttes
 h1, h2, p, span, article og main. Forhåndsvisningene skal vedlikeholdes sammen
 med kodeeksemplene; tester kontrollerer innholdet i de første eksemplene.
+
+
+## Leksjon 2: Fra main.jsx til App
+
+`lessons/mainToApp.js` inneholder leksjonen med eksisterende ID `fra-main-til-app`.
+Den registreres sammen med komponentleksjonen i `reactCourse.js`.
+Fire nye kursmål kobles til fire egne oppgave-ID-er; det eksisterende
+localStorage-formatet og tidligere leksjonsprogresjon endres ikke.
+
+Oppgaver kan fordeles gjennom en leksjon med en valgfri `exerciseIds`-liste
+på `exercises`-blokken:
+
+```js
+{ type: "exercises", exerciseIds: ["html-entry-role"] }
+```
+
+Uten listen vises alle leksjonens oppgaver som før. Med listen vises bare de
+valgte oppgavene. Nummereringen følger alltid leksjonens globale oppgaveliste,
+slik at oppgavene beholder nummer 1–4 selv om de vises i forskjellige seksjoner.
+Hver oppgave skal plasseres én gang. Progresjon og mestring beregnes fortsatt
+fra hele leksjonens oppgaveliste, ikke fra seksjonens utvalg.
+
+Leksjonen bruker bare standardeksport for egne komponenter, og introduserer
+ikke props, state eller hooks. `createRoot` importeres fra biblioteket med
+bibliotekets ordinære importform. StrictMode nevnes kun kort.

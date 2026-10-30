@@ -1,10 +1,12 @@
 import ExerciseRenderer from "./exercises/ExerciseRenderer.jsx";
 
-export default function LessonExercises({ lesson, lessonKey }) {
-  return lesson.exercises.length ? (
+export default function LessonExercises({ lesson, lessonKey, exerciseIds }) {
+  const questions = lesson.exercises.map((question, index) => ({ question, number: index + 1 }))
+    .filter(({ question }) => !exerciseIds || exerciseIds.includes(question.id));
+  return questions.length ? (
     <div className="exercise-list">
-      {lesson.exercises.map((question, index) => (
-        <ExerciseRenderer key={question.id} number={index + 1} question={question} lessonKey={lessonKey} />
+      {questions.map(({ question, number }) => (
+        <ExerciseRenderer key={question.id} number={number} question={question} lessonKey={lessonKey} />
       ))}
     </div>
   ) : (

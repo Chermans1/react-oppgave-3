@@ -27,7 +27,7 @@ export default function TeachingBlock({ block, lesson, lessonKey }) {
     case "preview":
       return <VisualExample {...block} />;
     case "exercises":
-      return <LessonExercises lesson={lesson} lessonKey={lessonKey} />;
+      return <LessonExercises lesson={lesson} lessonKey={lessonKey} exerciseIds={block.exerciseIds} />;
     case "goals":
       return <LessonGoals lesson={lesson} lessonKey={lessonKey} title={block.title} nested />;
     case "progress":

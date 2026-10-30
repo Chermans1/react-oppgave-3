@@ -6,6 +6,8 @@ import { createServer } from "vite";
 import { MemoryRouter } from "react-router-dom";
 import { emptyProgress, recordAnswer } from "../src/progress/progress.js";
 import { lessonPath } from "../src/content/courses.js";
+import { mainToAppLesson } from "../src/content/lessons/mainToApp.js";
+import { getCourseGoals } from "../src/progress/goals.js";
 import { reactCourse } from "../src/content/reactCourse.js";
 import { reactComponentsLesson } from "../src/content/lessons/reactComponents.js";
 
@@ -102,11 +104,12 @@ test("dashboard and lesson render identical goal statuses from the same saved an
     const dashboard = render(CourseGoals, { course: reactCourse });
     const lesson = render(LessonGoals, { lesson: reactComponentsLesson, lessonKey: key });
     const statuses = (html) => [...html.matchAll(/goal-status goal-status-([^" ]+)/g)].map((match) => match[1]);
-    assert.deepEqual(statuses(dashboard), statuses(lesson));
-    assert.equal(statuses(dashboard).length, 4);
+    const allGoals = getCourseGoals(reactCourse, saved);
+    assert.deepEqual(statuses(dashboard).filter((_, index) => allGoals[index].lessonKey === key), statuses(lesson));
+    assert.equal(statuses(dashboard).length, allGoals.length);
     assert.equal(dashboard.includes('type="checkbox"'), false);
     assert.equal(lesson.includes('type="checkbox"'), false);
-    assert.equal((dashboard.match(/Til leksjonen:/g) ?? []).length, 4);
+    assert.equal((dashboard.match(/Til leksjonen:/g) ?? []).length, allGoals.length);
   }
 });
 
@@ -184,4 +187,20 @@ test("lessons without sections retain the existing placeholder view", () => {
   assert.ok(html.includes("Kodeeksempler kommer her."));
   assert.ok(html.includes("Ingen oppgaver er tilgjengelige ennå."));
   assert.equal(html.includes("teaching-section"), false);
+});
+
+
+test("main-to-App exercises appear once, near their teaching, with global question numbers", () => {
+  const html = renderLesson(mainToAppLesson);
+  assert.equal((html.match(/class="teaching-section"/g) ?? []).length, 7);
+  for (const question of mainToAppLesson.exercises) {
+    assert.equal(html.split(escaped(question.prompt)).length - 1, 1);
+    assert.equal(html.includes(escaped(question.explanation)), false);
+  }
+  for (let number = 1; number <= 4; number++) assert.ok(html.includes(`Oppgave ${number}`));
+  const sections = mainToAppLesson.sections;
+  for (const index of [1, 2, 4, 5]) {
+    assert.ok(sections[index].blocks.some((block) => block.type === "exercises"));
+  }
+  assert.equal(html.includes("Riktig svar:"), false);
 });
