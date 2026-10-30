@@ -1,0 +1,3331 @@
+{
+  "name": "course",
+  "failures": [],
+  "questions": [
+    {
+      "id": "moduler-funksjoner-return-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/moduler-funksjoner",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "moduler-funksjoner-arrow-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/moduler-funksjoner",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "moduler-funksjoner-modules-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/moduler-funksjoner",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "objekter-spread-properties-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/objekter-spread",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "objekter-spread-copy-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/objekter-spread",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "objekter-spread-nested-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/objekter-spread",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lister-immutabilitet-map-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/lister-immutabilitet",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lister-immutabilitet-filter-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/lister-immutabilitet",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lister-immutabilitet-update-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/lister-immutabilitet",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "asynkron-javascript-promise-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/asynkron-javascript",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "asynkron-javascript-await-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/asynkron-javascript",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "asynkron-javascript-errors-check",
+      "lesson": "/kurs/react/moduler/javascript-grunnlag/leksjoner/asynkron-javascript",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "component-definition",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/funksjonskomponenter",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "component-return",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/funksjonskomponenter",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "jsx-closing-tag",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/funksjonskomponenter",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "html-entry-role",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fra-main-til-app",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "create-root-target",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fra-main-til-app",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "welcome-import-path",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fra-main-til-app",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "app-component-binding",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fra-main-til-app",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "predict-reading-count",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/jsx-regler",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "choose-classname",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/jsx-regler",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fix-nickname-input",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/jsx-regler",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "structure-info-panel",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/jsx-regler",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "complete-remaining-value",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/jsx-regler",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fragmenter-komponenttraer-fragment-check",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fragmenter-komponenttraer",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fragmenter-komponenttraer-tree-check",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fragmenter-komponenttraer",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fragmenter-komponenttraer-semantics-check",
+      "lesson": "/kurs/react/moduler/jsx-komponenter/leksjoner/fragmenter-komponenttraer",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "dataflyt-props-read-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/dataflyt-props",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "dataflyt-props-values-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/dataflyt-props",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "dataflyt-props-readonly-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/dataflyt-props",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "destrukturering-spread-defaults-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/destrukturering-spread",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "destrukturering-spread-spread-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/destrukturering-spread",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "destrukturering-spread-forward-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/destrukturering-spread",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "children-slot-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/children",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "children-responsibility-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/children",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "children-render-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/children",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lister-nokler-render-map-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/lister-nokler",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lister-nokler-identity-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/lister-nokler",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lister-nokler-outer-check",
+      "lesson": "/kurs/react/moduler/props-komposisjon/leksjoner/lister-nokler",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "css-modules-global-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/css-modules",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "css-modules-module-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/css-modules",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "css-modules-debug-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/css-modules",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "inline-layout-style-object-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/inline-layout",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "inline-layout-layout-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/inline-layout",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "inline-layout-classes-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/inline-layout",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "responsivitet-mobile-first-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/responsivitet",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "responsivitet-overflow-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/responsivitet",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "responsivitet-viewport-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/responsivitet",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "tastatur-labels-labels-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tastatur-labels",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "tastatur-labels-native-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tastatur-labels",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "tastatur-labels-focus-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tastatur-labels",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "tailwind-utilities-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tailwind",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "tailwind-setup-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tailwind",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "tailwind-responsive-check",
+      "lesson": "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tailwind",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "usestate-memory-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/usestate",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "usestate-setter-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/usestate",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "usestate-local-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/usestate",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hendelser-function-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/hendelser",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hendelser-argument-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/hendelser",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hendelser-event-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/hendelser",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "betinget-rendering-branch-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/betinget-rendering",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "betinget-rendering-and-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/betinget-rendering",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "betinget-rendering-empty-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/betinget-rendering",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "state-rendering-snapshot-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/state-rendering",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "state-rendering-pure-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/state-rendering",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "state-rendering-reset-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/state-rendering",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "oppdateringer-batching-queue-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/oppdateringer-batching",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "oppdateringer-batching-batch-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/oppdateringer-batching",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "oppdateringer-batching-immutable-check",
+      "lesson": "/kurs/react/moduler/state-hendelser/leksjoner/oppdateringer-batching",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "kontrollerte-felt-controlled-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/kontrollerte-felt",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "kontrollerte-felt-submit-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/kontrollerte-felt",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "kontrollerte-felt-checkbox-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/kontrollerte-felt",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "validering-rules-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/validering",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "validering-feedback-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/validering",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "validering-guard-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/validering",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "loftet-state-owner-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/loftet-state",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "loftet-state-callback-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/loftet-state",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "loftet-state-derive-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/loftet-state",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "listeoppdateringer-create-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/listeoppdateringer",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "listeoppdateringer-edit-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/listeoppdateringer",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "listeoppdateringer-delete-check",
+      "lesson": "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/listeoppdateringer",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hendelse-effekt-synchronization-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/hendelse-effekt",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hendelse-effekt-actions-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/hendelse-effekt",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hendelse-effekt-derived-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/hendelse-effekt",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "avhengigheter-cleanup-dependencies-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/avhengigheter-cleanup",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "avhengigheter-cleanup-cleanup-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/avhengigheter-cleanup",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "avhengigheter-cleanup-subscription-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/avhengigheter-cleanup",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fetch-http-response-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/fetch-http",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fetch-http-json-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/fetch-http",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fetch-http-request-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/fetch-http",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "fetch-http-cors-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/fetch-http",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "last-feil-tomt-states-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/last-feil-tomt",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "last-feil-tomt-flow-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/last-feil-tomt",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "last-feil-tomt-retry-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/last-feil-tomt",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "utdaterte-svar-race-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/utdaterte-svar",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "utdaterte-svar-abort-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/utdaterte-svar",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "utdaterte-svar-ignore-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/utdaterte-svar",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "strictmode-development-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/strictmode",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "strictmode-symmetric-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/strictmode",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "strictmode-pure-updater-check",
+      "lesson": "/kurs/react/moduler/effekter-api/leksjoner/strictmode",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hook-regler-order-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/hook-regler",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hook-regler-extract-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/hook-regler",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "hook-regler-instances-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/hook-regler",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lazy-state-initializer-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/lazy-state",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lazy-state-initial-only-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/lazy-state",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lazy-state-purity-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/lazy-state",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "localstorage-read-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/localstorage",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "localstorage-write-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/localstorage",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "localstorage-contract-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/localstorage",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "debouncing-delay-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/debouncing",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "debouncing-hook-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/debouncing",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "debouncing-limits-check",
+      "lesson": "/kurs/react/moduler/egne-hooks/leksjoner/debouncing",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "props-context-explicit-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/props-context",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "props-context-deep-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/props-context",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "props-context-scope-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/props-context",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "provider-consumer-create-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/provider-consumer",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "provider-consumer-provider-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/provider-consumer",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "provider-consumer-consumer-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/provider-consumer",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "context-hooks-custom-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/context-hooks",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "context-hooks-split-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/context-hooks",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "context-hooks-boundary-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/context-hooks",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "avledede-verdier-derive-count-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/avledede-verdier",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "avledede-verdier-selection-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/avledede-verdier",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "avledede-verdier-mastery-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/avledede-verdier",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "reducer-actions-reducer-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/reducer-actions",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "reducer-actions-dispatch-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/reducer-actions",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "reducer-actions-pure-check",
+      "lesson": "/kurs/react/moduler/context-state/leksjoner/reducer-actions",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "router-layout-hash-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/router-layout",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "router-layout-outlet-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/router-layout",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "router-layout-nested-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/router-layout",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lenker-parametere-links-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/lenker-parametere",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lenker-parametere-params-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/lenker-parametere",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lenker-parametere-safe-links-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/lenker-parametere",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "sokeparametere-read-query-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/sokeparametere",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "sokeparametere-write-query-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/sokeparametere",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "sokeparametere-parse-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/sokeparametere",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "navigasjon-feilruter-not-found-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/navigasjon-feilruter",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "navigasjon-feilruter-navigate-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/navigasjon-feilruter",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "navigasjon-feilruter-history-check",
+      "lesson": "/kurs/react/moduler/routing/leksjoner/navigasjon-feilruter",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "klient-server-ownership-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/klient-server",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "klient-server-provider-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/klient-server",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "klient-server-query-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/klient-server",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "api-axios-api-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/api-axios",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "api-axios-axios-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/api-axios",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "api-axios-cancel-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/api-axios",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "queries-cache-keys-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/queries-cache",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "queries-cache-enabled-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/queries-cache",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "queries-cache-freshness-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/queries-cache",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "queries-cache-background-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/queries-cache",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "mutasjoner-mutation-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/mutasjoner",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "mutasjoner-invalidate-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/mutasjoner",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "mutasjoner-failure-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/mutasjoner",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "paginering-page-key-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/paginering",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "paginering-placeholder-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/paginering",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "paginering-controls-check",
+      "lesson": "/kurs/react/moduler/serverdata/leksjoner/paginering",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "brukeradferd-scenario-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/brukeradferd",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "brukeradferd-interaction-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/brukeradferd",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "brukeradferd-regression-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/brukeradferd",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "brukeradferd-setup-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/brukeradferd",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "komponent-integrasjon-boundaries-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/komponent-integrasjon",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "komponent-integrasjon-providers-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/komponent-integrasjon",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "komponent-integrasjon-isolation-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/komponent-integrasjon",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "simulert-nettverk-handlers-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/simulert-nettverk",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "simulert-nettverk-lifecycle-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/simulert-nettverk",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "simulert-nettverk-failure-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/simulert-nettverk",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "selektorer-role-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/selektorer",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "selektorer-query-types-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/selektorer",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "selektorer-scope-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/selektorer",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "devtools-inspect-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/devtools",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "devtools-network-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/devtools",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "devtools-reproduce-check",
+      "lesson": "/kurs/react/moduler/testing/leksjoner/devtools",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "refs-fokus-ref-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/refs-fokus",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "refs-fokus-ref-state-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/refs-fokus",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "refs-fokus-focus-flow-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/refs-fokus",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "dialoger-native-dialog-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/dialoger",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "dialoger-dialog-focus-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/dialoger",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "dialoger-not-div-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/dialoger",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "error-boundaries-boundary-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/error-boundaries",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "error-boundaries-placement-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/error-boundaries",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "error-boundaries-recovery-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/error-boundaries",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lazy-suspense-lazy-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/lazy-suspense",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lazy-suspense-fallback-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/lazy-suspense",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "lazy-suspense-load-error-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/lazy-suspense",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "ytelse-measure-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/ytelse",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "ytelse-memo-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/ytelse",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "ytelse-identity-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/ytelse",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "typescript-props-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/typescript",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "typescript-state-types-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/typescript",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "typescript-unknown-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/typescript",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "typescript-events-check",
+      "lesson": "/kurs/react/moduler/robusthet/leksjoner/typescript",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "datamodell-domain-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/datamodell",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "datamodell-lookup-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/datamodell",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "datamodell-vertical-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/datamodell",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "state-lagring-owners-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/state-lagring",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "state-lagring-schema-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/state-lagring",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "state-lagring-resilience-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/state-lagring",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "oppgaver-progresjon-task-data-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/oppgaver-progresjon",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "oppgaver-progresjon-goal-status-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/oppgaver-progresjon",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "oppgaver-progresjon-feedback-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/oppgaver-progresjon",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "testing-publisering-quality-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/testing-publisering",
+      "type": "MultipleChoiceQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "testing-publisering-build-preview-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/testing-publisering",
+      "type": "FillInCodeQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    },
+    {
+      "id": "testing-publisering-handover-check",
+      "lesson": "/kurs/react/moduler/sluttprosjekt/leksjoner/testing-publisering",
+      "type": "FindTheBugQuestion",
+      "steps": {
+        "wrong1": "ok",
+        "wrong2": "ok",
+        "reveal": "ok",
+        "assisted": "ok",
+        "newRound": "ok",
+        "mastered": "ok"
+      },
+      "failures": [],
+      "hasSpecificHint": true
+    }
+  ],
+  "dashboards": [
+    {
+      "label": "start",
+      "shown": {
+        "mastered": 0,
+        "total": 201,
+        "percent": 0,
+        "goalRows": 266,
+        "markedMastered": 0,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 0,
+        "total": 201,
+        "percent": 0,
+        "knowledgeMastered": 0,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 0
+      },
+      "ok": true
+    },
+    {
+      "label": "etter leksjon 5",
+      "shown": {
+        "mastered": 16,
+        "total": 201,
+        "percent": 7,
+        "goalRows": 266,
+        "markedMastered": 16,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 16,
+        "total": 201,
+        "percent": 7,
+        "knowledgeMastered": 16,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 15
+      },
+      "ok": true
+    },
+    {
+      "label": "etter leksjon 20",
+      "shown": {
+        "mastered": 62,
+        "total": 201,
+        "percent": 30,
+        "goalRows": 266,
+        "markedMastered": 65,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 62,
+        "total": 201,
+        "percent": 30,
+        "knowledgeMastered": 65,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 63
+      },
+      "ok": true
+    },
+    {
+      "label": "etter leksjon 42",
+      "shown": {
+        "mastered": 129,
+        "total": 201,
+        "percent": 64,
+        "goalRows": 266,
+        "markedMastered": 132,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 129,
+        "total": 201,
+        "percent": 64,
+        "knowledgeMastered": 132,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 130
+      },
+      "ok": true
+    },
+    {
+      "label": "etter alle leksjoner",
+      "shown": {
+        "mastered": 201,
+        "total": 201,
+        "percent": 100,
+        "goalRows": 266,
+        "markedMastered": 204,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 201,
+        "total": 201,
+        "percent": 100,
+        "knowledgeMastered": 204,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 202
+      },
+      "ok": true
+    },
+    {
+      "label": "etter reload",
+      "shown": {
+        "mastered": 201,
+        "total": 201,
+        "percent": 100,
+        "goalRows": 266,
+        "markedMastered": 204,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 201,
+        "total": 201,
+        "percent": 100,
+        "knowledgeMastered": 204,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 202
+      },
+      "ok": true
+    },
+    {
+      "label": "etter assistert omøving",
+      "shown": {
+        "mastered": 201,
+        "total": 201,
+        "percent": 100,
+        "goalRows": 266,
+        "markedMastered": 204,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 201,
+        "total": 201,
+        "percent": 100,
+        "knowledgeMastered": 204,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 202
+      },
+      "ok": true
+    },
+    {
+      "label": "etter assistert omøving og reload",
+      "shown": {
+        "mastered": 201,
+        "total": 201,
+        "percent": 100,
+        "goalRows": 266,
+        "markedMastered": 204,
+        "practicalNotAssessed": 62
+      },
+      "expected": {
+        "done": 201,
+        "total": 201,
+        "percent": 100,
+        "knowledgeMastered": 204,
+        "practical": 62,
+        "optional": 4,
+        "attempted": 202
+      },
+      "ok": true
+    }
+  ],
+  "consoleEvents": [],
+  "lessonsVisited": [
+    "/kurs/react/moduler/javascript-grunnlag/leksjoner/moduler-funksjoner",
+    "/kurs/react/moduler/javascript-grunnlag/leksjoner/objekter-spread",
+    "/kurs/react/moduler/javascript-grunnlag/leksjoner/lister-immutabilitet",
+    "/kurs/react/moduler/javascript-grunnlag/leksjoner/asynkron-javascript",
+    "/kurs/react/moduler/jsx-komponenter/leksjoner/funksjonskomponenter",
+    "/kurs/react/moduler/jsx-komponenter/leksjoner/fra-main-til-app",
+    "/kurs/react/moduler/jsx-komponenter/leksjoner/jsx-regler",
+    "/kurs/react/moduler/jsx-komponenter/leksjoner/fragmenter-komponenttraer",
+    "/kurs/react/moduler/props-komposisjon/leksjoner/dataflyt-props",
+    "/kurs/react/moduler/props-komposisjon/leksjoner/destrukturering-spread",
+    "/kurs/react/moduler/props-komposisjon/leksjoner/children",
+    "/kurs/react/moduler/props-komposisjon/leksjoner/lister-nokler",
+    "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/css-modules",
+    "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/inline-layout",
+    "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/responsivitet",
+    "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tastatur-labels",
+    "/kurs/react/moduler/styling-tilgjengelighet/leksjoner/tailwind",
+    "/kurs/react/moduler/state-hendelser/leksjoner/usestate",
+    "/kurs/react/moduler/state-hendelser/leksjoner/hendelser",
+    "/kurs/react/moduler/state-hendelser/leksjoner/betinget-rendering",
+    "/kurs/react/moduler/state-hendelser/leksjoner/state-rendering",
+    "/kurs/react/moduler/state-hendelser/leksjoner/oppdateringer-batching",
+    "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/kontrollerte-felt",
+    "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/validering",
+    "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/loftet-state",
+    "/kurs/react/moduler/skjemaer-samarbeid/leksjoner/listeoppdateringer",
+    "/kurs/react/moduler/effekter-api/leksjoner/hendelse-effekt",
+    "/kurs/react/moduler/effekter-api/leksjoner/avhengigheter-cleanup",
+    "/kurs/react/moduler/effekter-api/leksjoner/fetch-http",
+    "/kurs/react/moduler/effekter-api/leksjoner/last-feil-tomt",
+    "/kurs/react/moduler/effekter-api/leksjoner/utdaterte-svar",
+    "/kurs/react/moduler/effekter-api/leksjoner/strictmode",
+    "/kurs/react/moduler/egne-hooks/leksjoner/hook-regler",
+    "/kurs/react/moduler/egne-hooks/leksjoner/lazy-state",
+    "/kurs/react/moduler/egne-hooks/leksjoner/localstorage",
+    "/kurs/react/moduler/egne-hooks/leksjoner/debouncing",
+    "/kurs/react/moduler/context-state/leksjoner/props-context",
+    "/kurs/react/moduler/context-state/leksjoner/provider-consumer",
+    "/kurs/react/moduler/context-state/leksjoner/context-hooks",
+    "/kurs/react/moduler/context-state/leksjoner/avledede-verdier",
+    "/kurs/react/moduler/context-state/leksjoner/reducer-actions",
+    "/kurs/react/moduler/routing/leksjoner/router-layout",
+    "/kurs/react/moduler/routing/leksjoner/lenker-parametere",
+    "/kurs/react/moduler/routing/leksjoner/sokeparametere",
+    "/kurs/react/moduler/routing/leksjoner/navigasjon-feilruter",
+    "/kurs/react/moduler/serverdata/leksjoner/klient-server",
+    "/kurs/react/moduler/serverdata/leksjoner/api-axios",
+    "/kurs/react/moduler/serverdata/leksjoner/queries-cache",
+    "/kurs/react/moduler/serverdata/leksjoner/mutasjoner",
+    "/kurs/react/moduler/serverdata/leksjoner/paginering",
+    "/kurs/react/moduler/testing/leksjoner/brukeradferd",
+    "/kurs/react/moduler/testing/leksjoner/komponent-integrasjon",
+    "/kurs/react/moduler/testing/leksjoner/simulert-nettverk",
+    "/kurs/react/moduler/testing/leksjoner/selektorer",
+    "/kurs/react/moduler/testing/leksjoner/devtools",
+    "/kurs/react/moduler/robusthet/leksjoner/refs-fokus",
+    "/kurs/react/moduler/robusthet/leksjoner/dialoger",
+    "/kurs/react/moduler/robusthet/leksjoner/error-boundaries",
+    "/kurs/react/moduler/robusthet/leksjoner/lazy-suspense",
+    "/kurs/react/moduler/robusthet/leksjoner/ytelse",
+    "/kurs/react/moduler/robusthet/leksjoner/typescript",
+    "/kurs/react/moduler/sluttprosjekt/leksjoner/datamodell",
+    "/kurs/react/moduler/sluttprosjekt/leksjoner/state-lagring",
+    "/kurs/react/moduler/sluttprosjekt/leksjoner/oppgaver-progresjon",
+    "/kurs/react/moduler/sluttprosjekt/leksjoner/testing-publisering"
+  ],
+  "relearning": {
+    "question": "component-definition",
+    "stored": {
+      "attempts": 7,
+      "correct": true,
+      "assisted": true,
+      "mastered": true,
+      "solutionShown": true
+    }
+  },
+  "summary": {
+    "lessonsFullySimulated": 65,
+    "questionsAnswered": 202,
+    "questionsMasteredAndVerified": 202,
+    "wrongAnswersSubmitted": 404,
+    "correctAnswersSubmitted": 404,
+    "solutionRevealsTested": 202,
+    "newRoundsTested": 202,
+    "lessonsMarkedReviewedAndMastered": 65,
+    "goalsMasteredByUi": "201 av 201 (100 %)",
+    "markedMasteredIncludingOptional": 204,
+    "perStep": {
+      "wrong1": {
+        "ok": 202,
+        "feil": 0,
+        "avbrutt": 0
+      },
+      "wrong2": {
+        "ok": 202,
+        "feil": 0,
+        "avbrutt": 0
+      },
+      "reveal": {
+        "ok": 202,
+        "feil": 0,
+        "avbrutt": 0
+      },
+      "assisted": {
+        "ok": 202,
+        "feil": 0,
+        "avbrutt": 0
+      },
+      "newRound": {
+        "ok": 202,
+        "feil": 0,
+        "avbrutt": 0
+      },
+      "mastered": {
+        "ok": 202,
+        "feil": 0,
+        "avbrutt": 0
+      }
+    },
+    "failures": 0,
+    "consoleEvents": 0
+  },
+  "seconds": 71
+}

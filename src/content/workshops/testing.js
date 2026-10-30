@@ -2,20 +2,18 @@ import { code, paragraph, section } from "./extendLesson.js";
 export const goalFormExample = `import { useState } from "react";
 export default function GoalForm({ onCreate }) {
   const [title, setTitle] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const invalid = submitted && !title.trim();
+  const [error, setError] = useState("");
   function submit(event) {
     event.preventDefault();
-    setSubmitted(true);
+    setError(title.trim() ? "" : "Skriv en tittel.");
     if (!title.trim()) return;
     onCreate(title.trim());
     setTitle("");
-    setSubmitted(false);
   }
   return <form onSubmit={submit}>
-    <label>Tittel<input value={title} aria-invalid={invalid}
+    <label>Tittel<input value={title} aria-invalid={Boolean(error)}
       onChange={(e) => setTitle(e.target.value)} /></label>
-    {invalid && <p role="alert">Skriv en tittel.</p>}
+    {error && <p role="alert">{error}</p>}
     <button type="submit">Legg til</button>
   </form>;
 }`;
@@ -52,7 +50,7 @@ export default function Counter() {
 }`),
     ], regression: [code("GoalForm.jsx – faktisk valideringskontrakt", goalFormExample)] },
     sections: [section("valideringsregresjon", "En test som faktisk avdekker tom oppretting",
-      paragraph("Feilmelding alene er ikke nok. Komponenten kan både vise feil og sende tom tekst videre ved en feil. Derfor kontrollerer vi callbacken som oppretter data. I en integrasjonstest kontrollerer vi også antall faktiske listeposter; å lete etter en bestemt tittel kan overse en tom post."),
+      paragraph("Feilmeldingen gjelder siste innsending og tømmes ved en gyldig innsending. Den beregnes ikke på nytt når feltet tømmes etter lagring. Feilmelding alene er ikke nok. Komponenten kan både vise feil og sende tom tekst videre ved en feil. Derfor kontrollerer vi callbacken som oppretter data. I en integrasjonstest kontrollerer vi også antall faktiske listeposter; å lete etter en bestemt tittel kan overse en tom post."),
       code("GoalForm.test.jsx – test både ugyldig og gyldig input", emptySubmitTest),
       paragraph("Fjern den tidlige returen i GoalForm midlertidig. Da skal testen for blank tittel feile fordi onCreate ble kalt. Sett returen tilbake og kjør begge testene. Dette kontrollerer at testen kan oppdage akkurat den feilen."),
     )], practice: { startpoint: "Opprett Counter.jsx, GoalForm.jsx og de viste testfilene med Vite-konfigurasjonen fra denne leksjonen. Setup-filen må importere afterEach og cleanup og kalle afterEach(cleanup).", checks: ["Kjør npx vitest run: teller-testen og de tre skjema-tilfellene skal være grønne.", "Fjern valideringsreturen: de blanke tilfellene skal feile selv om feilmeldingen fortsatt vises.", "Fjern tellerens setter: klikk-testen skal feile."], extensions: ["Legg til Enter-innsending og retting fra ugyldig til gyldig tittel."] },

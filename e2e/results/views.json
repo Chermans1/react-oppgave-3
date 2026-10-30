@@ -1,0 +1,1770 @@
+{
+  "name": "views",
+  "failures": [],
+  "pages": [
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "dashboard",
+      "overflowPx": 0,
+      "smallTargets": 2
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "kursoversikt",
+      "overflowPx": 0,
+      "smallTargets": 1
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "kursside",
+      "overflowPx": 0,
+      "smallTargets": 11
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "moduloversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:javascript-grunnlag",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:jsx-komponenter",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:props-komposisjon",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:styling-tilgjengelighet",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:state-hendelser",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:skjemaer-samarbeid",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:effekter-api",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:egne-hooks",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:context-state",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:routing",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:serverdata",
+      "overflowPx": 0,
+      "smallTargets": 10
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:testing",
+      "overflowPx": 0,
+      "smallTargets": 10
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:robusthet",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:sluttprosjekt",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "dashboard",
+      "overflowPx": 0,
+      "smallTargets": 2
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "kursoversikt",
+      "overflowPx": 0,
+      "smallTargets": 1
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "kursside",
+      "overflowPx": 0,
+      "smallTargets": 11
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "moduloversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:javascript-grunnlag",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:jsx-komponenter",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:props-komposisjon",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:styling-tilgjengelighet",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:state-hendelser",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:skjemaer-samarbeid",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:effekter-api",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:egne-hooks",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:context-state",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:routing",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:serverdata",
+      "overflowPx": 0,
+      "smallTargets": 10
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:testing",
+      "overflowPx": 0,
+      "smallTargets": 10
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:robusthet",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:sluttprosjekt",
+      "overflowPx": 0,
+      "smallTargets": 7
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "dashboard",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "kursoversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "kursside",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "moduloversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:javascript-grunnlag",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:jsx-komponenter",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:props-komposisjon",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:styling-tilgjengelighet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:state-hendelser",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:skjemaer-samarbeid",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:effekter-api",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:egne-hooks",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:context-state",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:routing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:serverdata",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:testing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:robusthet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:sluttprosjekt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "dashboard",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "kursoversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "kursside",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "moduloversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:javascript-grunnlag",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:jsx-komponenter",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:props-komposisjon",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:styling-tilgjengelighet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:state-hendelser",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:skjemaer-samarbeid",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:effekter-api",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:egne-hooks",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:context-state",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:routing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:serverdata",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:testing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:robusthet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:sluttprosjekt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "dashboard",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "kursoversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "kursside",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "moduloversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:javascript-grunnlag",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:jsx-komponenter",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:props-komposisjon",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:styling-tilgjengelighet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:state-hendelser",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:skjemaer-samarbeid",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:effekter-api",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:egne-hooks",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:context-state",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:routing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:serverdata",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:testing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:robusthet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:sluttprosjekt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "dashboard",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "kursoversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "kursside",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "moduloversikt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:javascript-grunnlag",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:jsx-komponenter",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:props-komposisjon",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:styling-tilgjengelighet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:state-hendelser",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:skjemaer-samarbeid",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:effekter-api",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:egne-hooks",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:context-state",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:routing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:serverdata",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:testing",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:robusthet",
+      "overflowPx": 0,
+      "smallTargets": 0
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:sluttprosjekt",
+      "overflowPx": 0,
+      "smallTargets": 0
+    }
+  ],
+  "contrast": [
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "dashboard",
+      "scanned": 1183,
+      "offenders": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "kursside",
+      "scanned": 80,
+      "offenders": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "page": "lesson:javascript-grunnlag",
+      "scanned": 169,
+      "offenders": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "dashboard",
+      "scanned": 1183,
+      "offenders": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "kursside",
+      "scanned": 80,
+      "offenders": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "page": "lesson:javascript-grunnlag",
+      "scanned": 169,
+      "offenders": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "dashboard",
+      "scanned": 1183,
+      "offenders": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "kursside",
+      "scanned": 94,
+      "offenders": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "page": "lesson:javascript-grunnlag",
+      "scanned": 169,
+      "offenders": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "dashboard",
+      "scanned": 1183,
+      "offenders": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "kursside",
+      "scanned": 94,
+      "offenders": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "page": "lesson:javascript-grunnlag",
+      "scanned": 169,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "dashboard",
+      "scanned": 1183,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "kursside",
+      "scanned": 94,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:javascript-grunnlag",
+      "scanned": 169,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:jsx-komponenter",
+      "scanned": 202,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:props-komposisjon",
+      "scanned": 162,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:styling-tilgjengelighet",
+      "scanned": 155,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:state-hendelser",
+      "scanned": 158,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:skjemaer-samarbeid",
+      "scanned": 158,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:effekter-api",
+      "scanned": 156,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:egne-hooks",
+      "scanned": 163,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:context-state",
+      "scanned": 155,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:routing",
+      "scanned": 156,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:serverdata",
+      "scanned": 160,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:testing",
+      "scanned": 197,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:robusthet",
+      "scanned": 156,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "page": "lesson:sluttprosjekt",
+      "scanned": 173,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "dashboard",
+      "scanned": 1183,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "kursside",
+      "scanned": 94,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:javascript-grunnlag",
+      "scanned": 169,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:jsx-komponenter",
+      "scanned": 203,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:props-komposisjon",
+      "scanned": 162,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:styling-tilgjengelighet",
+      "scanned": 155,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:state-hendelser",
+      "scanned": 158,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:skjemaer-samarbeid",
+      "scanned": 158,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:effekter-api",
+      "scanned": 156,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:egne-hooks",
+      "scanned": 163,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:context-state",
+      "scanned": 155,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:routing",
+      "scanned": 156,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:serverdata",
+      "scanned": 160,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:testing",
+      "scanned": 197,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:robusthet",
+      "scanned": 156,
+      "offenders": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "page": "lesson:sluttprosjekt",
+      "scanned": 173,
+      "offenders": []
+    }
+  ],
+  "states": [
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "state": "wrong1",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "state": "wrong2-knapp",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "state": "revealed",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "state": "assisted",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "state": "mastered",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "state": "wrong1",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "state": "wrong2-knapp",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "state": "revealed",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "state": "assisted",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "state": "mastered",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": [
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "radio",
+          "w": 18,
+          "h": 18
+        },
+        {
+          "tag": "input",
+          "text": "checkbox",
+          "w": 18,
+          "h": 18
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "state": "wrong1",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "state": "wrong2-knapp",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "state": "revealed",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "state": "assisted",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "state": "mastered",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "state": "wrong1",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "state": "wrong2-knapp",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "state": "revealed",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "state": "assisted",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "state": "mastered",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "state": "wrong1",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "state": "wrong2-knapp",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "state": "revealed",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "state": "assisted",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "state": "mastered",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "state": "wrong1",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "state": "wrong2-knapp",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "state": "revealed",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "state": "assisted",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "state": "mastered",
+      "offenders": [],
+      "overflowPx": 0,
+      "smallTargets": []
+    }
+  ],
+  "screenshots": [
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/dashboard-mobile-light.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/dashboard-mobile-dark.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/oppgave-revealed-mobile-dark.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/oppgave-assisted-mobile-dark.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/leksjon-mobile-dark.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/oppgave-revealed-tablet-light.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/oppgave-assisted-tablet-light.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/leksjon-tablet-dark.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/oppgave-revealed-desktop-dark.png",
+    "/Volumes/DevSSD/Projects/Kodehode/Modul 3/prosjekter/react-oppgave-3/e2e/results/screenshots/oppgave-assisted-desktop-dark.png"
+  ],
+  "summary": {
+    "pagesMeasured": 108,
+    "pagesWithOverflow": 0,
+    "mobileSmallTargetPages": 34,
+    "contrastPagesScanned": 44,
+    "contrastOffenderPages": 0,
+    "questionStatesChecked": 30,
+    "questionStatesWithContrastProblems": 0,
+    "failures": 0,
+    "consoleEvents": 0,
+    "worst": []
+  },
+  "consoleEvents": [],
+  "seconds": 23
+}

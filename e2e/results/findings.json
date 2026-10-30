@@ -1,0 +1,239 @@
+{
+  "name": "findings",
+  "failures": [],
+  "dashboards": [
+    {
+      "theme": "light",
+      "height": 4746,
+      "modules": 14,
+      "goals": 266,
+      "keyboard": "Enter/Space/Tab and focus passed"
+    },
+    {
+      "theme": "dark",
+      "height": 4746,
+      "modules": 14,
+      "goals": 266,
+      "keyboard": "Enter/Space/Tab and focus passed"
+    }
+  ],
+  "contrasts": [
+    {
+      "theme": "light",
+      "pairs": [
+        {
+          "fg": "muted",
+          "bg": "surface",
+          "foreground": "#54635b",
+          "background": "#ffffff",
+          "ratio": 6.339113915788194,
+          "minimum": 4.5
+        },
+        {
+          "fg": "muted",
+          "bg": "note-bg",
+          "foreground": "#54635b",
+          "background": "#f0eddf",
+          "ratio": 5.398591756595454,
+          "minimum": 4.5
+        },
+        {
+          "fg": "muted",
+          "bg": "bg",
+          "foreground": "#54635b",
+          "background": "#f6f7f4",
+          "ratio": 5.895135208372563,
+          "minimum": 4.5
+        },
+        {
+          "fg": "accent",
+          "bg": "accent-soft",
+          "foreground": "#24776b",
+          "background": "#eaf3ed",
+          "ratio": 4.722711309756132,
+          "minimum": 4.5
+        },
+        {
+          "fg": "note-text",
+          "bg": "note-bg",
+          "foreground": "#645c39",
+          "background": "#f0eddf",
+          "ratio": 5.710531202619766,
+          "minimum": 4.5
+        },
+        {
+          "fg": "control-border",
+          "bg": "input-bg",
+          "foreground": "#738079",
+          "background": "#fcfdfb",
+          "ratio": 4.041487099452798,
+          "minimum": 3
+        },
+        {
+          "fg": "control-border",
+          "bg": "surface",
+          "foreground": "#738079",
+          "background": "#ffffff",
+          "ratio": 4.123523982966536,
+          "minimum": 3
+        },
+        {
+          "fg": "accent",
+          "bg": "surface",
+          "foreground": "#24776b",
+          "background": "#ffffff",
+          "ratio": 5.348885808535197,
+          "minimum": 3
+        },
+        {
+          "fg": "accent",
+          "bg": "bg",
+          "foreground": "#24776b",
+          "background": "#f6f7f4",
+          "ratio": 4.974260673392474,
+          "minimum": 3
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "pairs": [
+        {
+          "fg": "muted",
+          "bg": "surface",
+          "foreground": "#a5b8ad",
+          "background": "#1d2b27",
+          "ratio": 7.048953640545363,
+          "minimum": 4.5
+        },
+        {
+          "fg": "muted",
+          "bg": "note-bg",
+          "foreground": "#a5b8ad",
+          "background": "#343426",
+          "ratio": 6.041017944534216,
+          "minimum": 4.5
+        },
+        {
+          "fg": "muted",
+          "bg": "bg",
+          "foreground": "#a5b8ad",
+          "background": "#151f1d",
+          "ratio": 8.075874639929657,
+          "minimum": 4.5
+        },
+        {
+          "fg": "accent",
+          "bg": "accent-soft",
+          "foreground": "#8acdb9",
+          "background": "#293f34",
+          "ratio": 6.207293631028075,
+          "minimum": 4.5
+        },
+        {
+          "fg": "note-text",
+          "bg": "note-bg",
+          "foreground": "#ddd4af",
+          "background": "#343426",
+          "ratio": 8.473981108400258,
+          "minimum": 4.5
+        },
+        {
+          "fg": "control-border",
+          "bg": "input-bg",
+          "foreground": "#789185",
+          "background": "#18231f",
+          "ratio": 4.76311821324355,
+          "minimum": 3
+        },
+        {
+          "fg": "control-border",
+          "bg": "surface",
+          "foreground": "#789185",
+          "background": "#1d2b27",
+          "ratio": 4.33572251699824,
+          "minimum": 3
+        },
+        {
+          "fg": "accent",
+          "bg": "surface",
+          "foreground": "#8acdb9",
+          "background": "#1d2b27",
+          "ratio": 8.067986619827288,
+          "minimum": 3
+        },
+        {
+          "fg": "accent",
+          "bg": "bg",
+          "foreground": "#8acdb9",
+          "background": "#151f1d",
+          "ratio": 9.243364598623463,
+          "minimum": 3
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "example": "GoalForm",
+      "mutated": false
+    },
+    {
+      "example": "GoalForm",
+      "mutated": true
+    },
+    {
+      "example": "TitleForm",
+      "blankAndValid": true
+    },
+    {
+      "example": "useStoredTasks",
+      "injectedThrowingAdapter": true,
+      "tasksInMemory": 2
+    }
+  ],
+  "lessons": [
+    {
+      "number": 11,
+      "title": "Komposisjon med children"
+    },
+    {
+      "number": 24,
+      "title": "Input-state og validering"
+    },
+    {
+      "number": 35,
+      "title": "useLocalStorage og JSON-feil"
+    },
+    {
+      "number": 37,
+      "title": "Props kontra Context"
+    },
+    {
+      "number": 51,
+      "title": "Tester av brukeradferd"
+    }
+  ],
+  "summary": {
+    "dashboards": [
+      {
+        "theme": "light",
+        "height": 4746,
+        "modules": 14,
+        "goals": 266,
+        "keyboard": "Enter/Space/Tab and focus passed"
+      },
+      {
+        "theme": "dark",
+        "height": 4746,
+        "modules": 14,
+        "goals": 266,
+        "keyboard": "Enter/Space/Tab and focus passed"
+      }
+    ],
+    "correctedLessons": 5,
+    "executableExampleChecks": 4,
+    "failures": 0
+  },
+  "seconds": 4
+}

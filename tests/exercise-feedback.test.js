@@ -107,7 +107,7 @@ test("dashboard and lesson render identical goal statuses from the same saved an
     const lesson = render(LessonGoals, { lesson: reactComponentsLesson, lessonKey: key });
     const statuses = (html) => [...html.matchAll(/goal-status goal-status-([^" ]+)/g)].map((match) => match[1]);
     const allGoals = getCourseGoals(reactCourse, saved);
-    assert.deepEqual(statuses(dashboard).filter((_, index) => allGoals[index].lessonKey === key), statuses(lesson));
+    assert.deepEqual(dashboard.split("<li").filter((row) => row.includes(`href="${key}"`)).flatMap(statuses), statuses(lesson));
     assert.equal(statuses(dashboard).length, allGoals.length);
     assert.equal(dashboard.includes('type="checkbox"'), false);
     assert.equal(lesson.includes('type="checkbox"'), false);
@@ -316,4 +316,30 @@ test("revised attempts remain visible history without revealing a new solution o
   assert.match(markup, /må besvares på nytt/);
   assert.equal(markup.includes("Riktig svar:"), false);
   assert.equal(markup.includes(escaped(question.explanation)), false);
+});
+
+
+test("dashboard groups all goals by closed native modules and keeps optional/practical goals outside mandatory progress", () => {
+  const progress = emptyProgress();
+  const html = renderToStaticMarkup(createElement(MemoryRouter, null,
+    createElement(LearningProgressContext.Provider, { value: { progress } },
+      createElement(CourseGoals, { course: reactCourse }),
+    ),
+  ));
+  assert.equal((html.match(/<details class="module-goals"/g) ?? []).length, 14);
+  assert.equal((html.match(/<summary>/g) ?? []).length, 14);
+  assert.doesNotMatch(html, /<details[^>]*\bopen(?:=|>| )/);
+  assert.equal((html.match(/Til leksjonen:/g) ?? []).length, 266);
+  assert.match(html, /0 av 201 obligatoriske kunnskapsmål mestret/);
+  assert.match(html, /Valgfrie kunnskapsmål \(3\)/);
+  assert.match(html, /Praktiske mål – vurderes i eget prosjekt/);
+  for (const module of reactCourse.modules) {
+    const rows = html.split('<details class="module-goals"').find((part) => part.includes(`. ${module.title}</span>`));
+    assert.ok(rows, module.id);
+    for (const lesson of module.lessons) {
+      const target = lessonPath(reactCourse.id, module.id, lesson.id);
+      const count = rows.split(`href="${target}"`).length - 1;
+      assert.equal(count, lesson.learningObjectives.length, target);
+    }
+  }
 });

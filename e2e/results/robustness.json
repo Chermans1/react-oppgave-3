@@ -1,0 +1,147 @@
+{
+  "name": "robustness",
+  "failures": [],
+  "scenarios": [
+    {
+      "name": "reload etter fasitvisning",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "reload etter mestring og assistert omøving",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ugyldig lagret progresjon (ikke JSON)",
+      "ok": true,
+      "failures": [],
+      "notes": {
+        "rawAfter": "{ikke json"
+      },
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ugyldig lagret progresjon (feil struktur)",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ugyldig lagret progresjon (nye felt med feil type)",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "lagring som feiler ved skriving",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "manglende localStorage (tilgang nektet)",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "eldre lagret progresjon og revidert oppgave",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ugyldig leksjon",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ugyldig modul",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ugyldig kurs",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "leksjon under feil modul",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "ukjent adresse",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "valgfrie mål påvirker ikke obligatorisk progresjon",
+      "ok": true,
+      "failures": [],
+      "notes": {
+        "optionalLesson": "Valgfritt: introduksjon til Tailwind",
+        "before": {
+          "mastered": 0,
+          "total": 201,
+          "percent": 0
+        },
+        "after": {
+          "mastered": 0,
+          "total": 201,
+          "percent": 0,
+          "markedMastered": 3
+        }
+      },
+      "consoleEvents": 0,
+      "events": []
+    },
+    {
+      "name": "uberørt lagring ved ren lesing",
+      "ok": true,
+      "failures": [],
+      "notes": {},
+      "consoleEvents": 0,
+      "events": []
+    }
+  ],
+  "summary": {
+    "scenarios": 15,
+    "passed": 15,
+    "failures": 0
+  },
+  "seconds": 5
+}

@@ -240,8 +240,8 @@ test("shown Query view is the tested component source and min-memory mode is exp
   assert.ok(blocks.some((b) => b.code?.includes('networkMode: "always"')));
 });
 
-test("four changed assessments require revision 3 while other task revisions remain unchanged", () => {
-  const changed = ["children-slot-check", "children-responsibility-check", "children-render-check", "klient-server-provider-check"];
+test("five changed assessments require revision 3 while other task revisions remain unchanged", () => {
+  const changed = ["children-slot-check", "children-responsibility-check", "children-render-check", "klient-server-provider-check", "props-context-scope-check"];
   const lessons = reactCourse.modules.flatMap((m) => m.lessons);
   for (const l of lessons) for (const q of l.exercises) {
     const expected = changed.includes(q.id) ? 3 : ["funksjonskomponenter", "fra-main-til-app", "jsx-regler"].includes(l.id) ? 1 : 2;

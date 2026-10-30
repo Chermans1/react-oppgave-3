@@ -2141,7 +2141,7 @@ export const reactCourseManifest = {
             },
             {
               "id": "props-context-scope-check",
-              "revision": 2
+              "revision": 3
             }
           ],
           "practicalActivities": [
