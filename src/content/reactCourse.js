@@ -1,3 +1,4 @@
+import { jsxRulesLesson } from "./lessons/jsxRules.js";
 import { mainToAppLesson } from "./lessons/mainToApp.js";
 import { reactComponentsLesson } from "./lessons/reactComponents.js";
 
@@ -171,6 +172,7 @@ const modulePlans = [
 const implementedLessons = {
   [reactComponentsLesson.id]: reactComponentsLesson,
   [mainToAppLesson.id]: mainToAppLesson,
+  [jsxRulesLesson.id]: jsxRulesLesson,
 };
 
 export const reactCourse = {

@@ -1123,3 +1123,20 @@ a {
   .lesson-panel .teaching-section-heading h2 { font-size: 22px; }
   .component-tree, .preview-content { padding: 16px; }
 }
+
+.preview-content .field-label {
+  display: block;
+  font-weight: 700;
+}
+.preview-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 16px;
+}

@@ -200,3 +200,17 @@ oppgaveprogresjonen. Målet om import/eksport krever to beståtte oppgaver.
 Innholdet er definert i `src/content/lessons/mainToApp.js`. Seksjonsblokker med
 `exerciseIds` velger hvilke oppgaver som vises, og gjenbruker samme motor og
 lagring som før. Tidligere leksjonsdata og progresjon er bevart.
+
+
+## JSX-regler og uttrykk
+
+Leksjon 3 i `jsx-komponenter` ligger på den eksisterende adressen `jsx-regler`.
+Den har sju seksjoner om JSX, uttrykk, attributter, selvavslutning, nøsting,
+kombinasjon med JavaScript og oppsummering. Fem uavhengige oppgaver ligger
+underveis i seksjon 2–6 og oppdaterer seks kursmål fra eksisterende progresjon.
+
+Innholdet ligger i `src/content/lessons/jsxRules.js`. Eksisterende undervisning
+og oppgavemotor gjenbrukes. Forhåndsvisningen kan også vise et statisk,
+tilgjengelig tekstfelt der label og id er koblet sammen. Ingen props, state
+eller hooks er nødvendig for studenten, og de to ferdige leksjonenes innhold
+er beholdt.

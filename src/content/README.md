@@ -158,7 +158,7 @@ Visuelle forhåndsvisninger er deklarative, statiske elementtrær. Hver node har
 `tag`, valgfri `text` og valgfrie `children`. Bare godkjente elementtyper vises,
 og kildeteksten evalueres aldri. En demonstrert `main` vises som en div for å
 unngå et ekstra main-landemerke inne i appens hovedinnhold. Foreløpig støttes
-h1, h2, p, span, article og main. Forhåndsvisningene skal vedlikeholdes sammen
+h1, h2, p, span, article, main, section, div, label og input. Forhåndsvisningene skal vedlikeholdes sammen
 med kodeeksemplene; tester kontrollerer innholdet i de første eksemplene.
 
 
@@ -185,3 +185,20 @@ fra hele leksjonens oppgaveliste, ikke fra seksjonens utvalg.
 Leksjonen bruker bare standardeksport for egne komponenter, og introduserer
 ikke props, state eller hooks. `createRoot` importeres fra biblioteket med
 bibliotekets ordinære importform. StrictMode nevnes kun kort.
+
+
+## Leksjon 3: JSX-regler og uttrykk
+
+`lessons/jsxRules.js` definerer leksjonen med eksisterende ID `jsx-regler`.
+Den har sju seksjoner, seks kursmål og fem oppgaver, én i hver av seksjonene
+2–6. Oppgavene tester resultatforståelse, attributter, selvavslutning, struktur
+og kombinasjon av JavaScript og JSX. Oppgavelistens ID-er brukes både i
+seksjonsplassering og i målenes `exerciseIds`.
+
+Forhåndsvisninger støtter nå også `section`, `div`, `label` og `input`.
+En label kan ha `htmlFor`, et felt kan ha `id` og `placeholder`, og noder kan
+ha `className` for forhåndsvisningens CSS. ID-er får et unikt prefiks per
+forhåndsvisning; labelen får samme prefiks, slik at koblingen bevares uten
+ID-kollisjoner. Tekstfelt er alltid skrivebeskyttede i forhåndsvisningen.
+Bare de eksplisitt støttede egenskapene brukes; kode og event-handlere fra
+data kjøres ikke. Kursdataene i de to tidligere leksjonene er uendret.

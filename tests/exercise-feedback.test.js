@@ -6,6 +6,7 @@ import { createServer } from "vite";
 import { MemoryRouter } from "react-router-dom";
 import { emptyProgress, recordAnswer } from "../src/progress/progress.js";
 import { lessonPath } from "../src/content/courses.js";
+import { jsxRulesLesson } from "../src/content/lessons/jsxRules.js";
 import { mainToAppLesson } from "../src/content/lessons/mainToApp.js";
 import { getCourseGoals } from "../src/progress/goals.js";
 import { reactCourse } from "../src/content/reactCourse.js";
@@ -203,4 +204,34 @@ test("main-to-App exercises appear once, near their teaching, with global questi
     assert.ok(sections[index].blocks.some((block) => block.type === "exercises"));
   }
   assert.equal(html.includes("Riktig svar:"), false);
+});
+
+
+test("JSX sections render five numbered activities without revealing unsubmitted feedback", () => {
+  const html = renderLesson(jsxRulesLesson);
+  assert.equal((html.match(/class="teaching-section"/g) ?? []).length, 7);
+  for (let number = 1; number <= 5; number++) assert.ok(html.includes(`Oppgave ${number}`));
+  for (const question of jsxRulesLesson.exercises) {
+    assert.equal(html.split(escaped(question.prompt)).length - 1, 1);
+    assert.equal(html.includes(escaped(question.explanation)), false);
+  }
+  assert.equal(html.includes("Riktig svar:"), false);
+});
+
+test("JSX visual results show text/expression differences and a safely associated field", () => {
+  const previews = jsxRulesLesson.sections.flatMap((section) => section.blocks).filter((block) => block.type === "preview");
+  const render = (block) => renderToStaticMarkup(createElement(VisualExample, block));
+  const expressions = render(previews[0]);
+  for (const text of ["firstName", "Sara", "6"]) assert.ok(expressions.includes(`>${text}</p>`));
+  const field = render(previews[1]);
+  const labelFor = field.match(/for="([^"]+)"/)[1];
+  assert.ok(field.includes(`id="${labelFor}"`));
+  assert.match(field, /readonly/i);
+  assert.ok(field.includes('class="preview-label field-label"'));
+  const secondField = renderToStaticMarkup(createElement("div", null,
+    createElement(VisualExample, previews[1]), createElement(VisualExample, previews[1]),
+  ));
+  const ids = [...secondField.matchAll(/<input[^>]* id="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(new Set(ids).size, 2);
+  assert.ok(render(previews[3]).includes("Med pause: 25 minutter"));
 });
